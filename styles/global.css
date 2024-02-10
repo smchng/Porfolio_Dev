@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "KaiseiHarunoUmi";
+  src: url("../public/fonts/KaiseiHarunoUmi-Regular.ttf") format("opentype");
+}
+@font-face {
+  font-family: "KaiseiHarunoUmiMedium";
+  src: url("../public/fonts/KaiseiHarunoUmi-Medium.ttf") format("opentype");
+}
+@font-face {
+  font-family: "KaiseiHarunoUmiBold";
+  src: url("../public/fonts/KaiseiHarunoUmi-Bold.ttf") format("opentype");
+  /* Add more src declarations for different font formats if necessary */
+}
+h1 {
+  font-family: "KaiseiHarunoUmiMedium", sans-serif;
+  @apply text-xl;
+}
+
+h2 {
+  font-family: "KaiseiHarunoUmiMedium", sans-serif;
+  @apply text-lg;
+}
+
+h3 {
+  font-family: "KaiseiHarunoUmi", sans-serif;
+  @apply text-base;
+}
+
+body {
+  font-family: "KaiseiHarunoUmi", sans-serif;
+  @apply text-base;
+}
+
+p {
+  font-family: "KaiseiHarunoUmi", sans-serif;
+  @apply text-2xs;
+}
+
+a {
+  font-family: "KaiseiHarunoUmiMedium", sans-serif !important;
+  @apply text-2xs;
+}
+
+body {
+  color: #ffffff;
+  background: #232830;
+}
+
+img {
+  border: 1px solid #ffffff;
+  padding: 5px;
+
+}
+
+.scroll-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.scroll-container::-webkit-scrollbar-thumb {
+  background-color: #333; /* Color of the scrollbar thumb */
+  border-radius: 6px; /* Rounded corners */
+}
+
+.scroll-container::-webkit-scrollbar-track {
+  background: none; /* No background for the scrollbar track */
+}
