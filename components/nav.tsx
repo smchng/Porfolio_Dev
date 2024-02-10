@@ -31,28 +31,25 @@ const Nav = () => {
         },
     ]
   return (
-    <div className="fixed inset-0 flex items-end m-0 p-[2vw] z-50 space-x-[5vw]">
-    {/* Blurred background container */}
-    <div className="absolute inset-0 backdrop-blur-lg bg-navy opacity-75"></div>
-
-    {/* Content container */}
-    <div className="relative flex items-end z-10 w-full">
-        <div className="flex space-x-[5vw] flex-grow">
-                  
-                  {NavItems.slice(0, 2).map((item, index) => (
-                      <Link href={item.link} key={index}>
-                          <p className="text-white">{item.text}</p>
-                      </Link>))}
+<div className="fixed flex m-0 px-[2vw] py-[15px] z-50 space-x-[5vw] backdrop-blur-lg bg-navy opacity-75 w-full">
+    <div className="relative flex z-10 w-full">
+        <div className="flex space-x-[5vw] w-full">
+            {NavItems.slice(0, 2).map((item, index) => (
+                <Link href={item.link} key={index}>
+                    <p className="text-white">{item.text}</p>
+                </Link>
+            ))}
         </div>
-
-        <div className="flex space-x-[5vw]">
-       {NavItems.slice(2,6).map((item, index) => (
-                      <Link href={item.link} key={index}>
-                          <p className="text-white">{item.text}</p>
-                      </Link>))}
+        <div className="flex space-x-[5vw] justify-end w-full">
+            {NavItems.slice(2, 6).map((item, index) => (
+                <Link href={item.link} key={index}>
+                    <p className="text-white">{item.text}</p>
+                </Link>
+            ))}
         </div>
     </div>
-    </div>
+</div>
+
 
 
   );

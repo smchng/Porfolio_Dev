@@ -1,3 +1,5 @@
+import { useEffect, useState } from 'react';
+
 import Image from "next/image";
 import Marquee from "react-fast-marquee";
 import Project from "@/components/project"
@@ -38,6 +40,29 @@ export default function Home() {
       skill:"typescript, react, next.js, tailwind"
     },
   ]
+
+  const [flexDirection, setFlexDirection] = useState('');
+  const [imgMargin, setImgMargin] = useState('');
+
+  useEffect(() => {
+    // Check the window height and set flex direction accordingly
+    const handleResize = () => {
+      setFlexDirection(window.innerHeight > 700 ? 'flex-col' : '');
+      setImgMargin(window.innerHeight > 700 ? 'm-auto' : 'mx-[3vw]');
+    };
+
+    // Initial setup
+    handleResize();
+
+    // Attach event listener for window resize
+    window.addEventListener('resize', handleResize);
+
+    // Clean up event listener on component unmount
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []); // Empty dependency array ensures the effect runs only once on mount
+
   return (
     <div>
       <div className="h-screen flex flex-col justify-end m-0 p-[2vw] ">
@@ -45,8 +70,8 @@ export default function Home() {
         <h1 className="mt-0 text-[8vw]">DEVELOPER</h1>
       </div>
       <Marquee autoFill className="space-x-3 tracking-widest text-lg">DIGITAL ARCHIVE</Marquee>
-      <div className="py-[5vh] h-screen flex 2xl:flex-col">
-        <Image src={img} alt="lighthouse" className="max-h-[80vh] 2xl:max-h-[70vh] max-w-[80vw] mx-[3vw] 2xl:m-auto align-center object-cover"></Image>
+      <div className={`py-[5vh] h-screen flex ${flexDirection}`}>
+        <Image src={img} alt="lighthouse" className={`max-h-[80vh] 2xl:max-h-[70vh] max-w-[95vw] md:max-w-[80vw] align-center object-cover ${imgMargin}`}></Image>
         <div>
         <div className="my-[0.25vh]">filters</div>
         <div className="relative flex flex-col overflow-hidden">
