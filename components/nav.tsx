@@ -11,7 +11,7 @@ const Nav = () => {
       text: "HOME",
     },
     {
-      link: "/",
+      link: "/about",
       text: "ABOUT",
     },
     {
@@ -19,12 +19,12 @@ const Nav = () => {
       text: "RESUME",
     },
     {
-      link: "/",
+      link: "https://www.linkedin.com/in/samantha-chung-76a0961bb/",
       text: "LINKEDIN",
     },
 
     {
-      link: "/",
+      link: "https://github.com/smchng",
       text: "GITHUB",
     },
     {
@@ -44,7 +44,7 @@ const Nav = () => {
         </div>
         <div className="flex space-x-[5vw] justify-end w-full">
           {NavItems.slice(2, 6).map((item, index) => (
-            <Link href={item.link} key={index}>
+            <Link href={item.link} key={index} target="_blank">
               <p className="text-white  text-[10px] md:text-2xs">{item.text}</p>
             </Link>
           ))}

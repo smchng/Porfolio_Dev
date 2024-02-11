@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import "@/styles/global.css";
 
 import Home from "@/pages/index";
+import About from "@/pages/about";
 import Nav from "@/components/nav";
 import Footer from "@/components/footer";
 
@@ -38,7 +39,10 @@ export default function App() {
         <section>
           <Nav />
         </section>
-        <section>{currentPage === "/" && <Home />}</section>
+        <section>
+          {currentPage === "/" && <Home />}
+          {currentPage === "/about" && <About />}
+        </section>
         <section>
           <Footer />
         </section>

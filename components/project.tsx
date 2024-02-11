@@ -8,7 +8,7 @@ type ProjectProps = {
   skill: string;
 };
 
-const Project = ({ title, group, link, skill }: ProjectProps) => {
+export const Project = ({ title, group, link, skill }: ProjectProps) => {
   const [isHovered, setIsHovered] = useState(false);
   const handleMouseEnter = () => {
     setIsHovered(true);
@@ -54,5 +54,3 @@ const Project = ({ title, group, link, skill }: ProjectProps) => {
     </div>
   );
 };
-
-export default Project;

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 import Image from "next/image";
 import Marquee from "react-fast-marquee";
-import Project from "@/components/project";
+import { Project } from "@/components/project";
 
 import img from "@/public/imgs/stock.jpg";
 
