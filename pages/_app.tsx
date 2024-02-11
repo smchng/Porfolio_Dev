@@ -33,7 +33,7 @@ export default function App() {
         <link rel="icon" type="image/png" href="/imgs/seal.jpg" />
         {/* Other head elements */}
       </Head>
-      <main className={"bg-navy"}>
+      <main className={"bg-navy px-[1vw]"}>
         <section><Nav /></section>
         <section>{currentPage === "/" && <Home />}</section>
       </main>
