@@ -28,7 +28,7 @@ const Nav = () => {
       text: "GITHUB",
     },
     {
-      link: "/",
+      link: "mailto:s.chng02@gmail.prettierrc.js.com",
       text: "EMAIL",
     },
   ];
@@ -42,10 +42,15 @@ const Nav = () => {
             </Link>
           ))}
         </div>
-        <div className="flex space-x-[5vw] justify-end w-full">
+        <div className="flex space-x-[3vw] justify-end w-full">
           {NavItems.slice(2, 6).map((item, index) => (
             <Link href={item.link} key={index} target="_blank">
-              <p className="text-white  text-[10px] md:text-2xs">{item.text}</p>
+              <p className="text-white  text-[10px] md:text-2xs ">
+                {item.text}
+                {index !== NavItems.slice(2, 6).length - 1 && (
+                  <span className="pl-[3vw]">/</span>
+                )}
+              </p>
             </Link>
           ))}
         </div>
