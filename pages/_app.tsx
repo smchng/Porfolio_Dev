@@ -4,7 +4,8 @@ import { useRouter } from "next/router";
 import "@/styles/global.css";
 
 import Home from "@/pages/index";
-import Nav from "@/components/nav"
+import Nav from "@/components/nav";
+import Footer from "@/components/footer";
 
 import Head from "next/head";
 
@@ -34,8 +35,13 @@ export default function App() {
         {/* Other head elements */}
       </Head>
       <main className={"bg-navy px-[1vw]"}>
-        <section><Nav /></section>
+        <section>
+          <Nav />
+        </section>
         <section>{currentPage === "/" && <Home />}</section>
+        <section>
+          <Footer />
+        </section>
       </main>
     </>
   );
