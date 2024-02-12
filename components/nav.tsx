@@ -33,19 +33,21 @@ const Nav = () => {
     },
   ];
   return (
-    <div className=" fixed flex m-0 px-[2vw] py-[10px] z-50 space-x-[5vw] backdrop-blur-lg bg-navy opacity-75 w-full">
+    <div className="fixed flex pb-[10px] pt-[25px] px-[2vw] z-50 space-x-[5vw] backdrop-blur-lg bg-navy opacity-75 w-full border-b border-white">
       <div className="relative flex z-10 w-full">
         <div className="flex space-x-[5vw] w-full">
           {NavItems.slice(0, 2).map((item, index) => (
             <Link href={item.link} key={index}>
-              <p className="text-white text-[10px] md:text-2xs">{item.text}</p>
+              <p className="text-white text-[10px] md:text-[11px]">
+                {item.text}
+              </p>
             </Link>
           ))}
         </div>
         <div className="flex space-x-[3vw] justify-end w-full">
           {NavItems.slice(2, 6).map((item, index) => (
             <Link href={item.link} key={index} target="_blank">
-              <p className="text-white  text-[10px] md:text-2xs ">
+              <p className="text-white  text-[10px] md:text-[11px] ">
                 {item.text}
                 {index !== NavItems.slice(2, 6).length - 1 && (
                   <span className="pl-[3vw]">/</span>
@@ -54,7 +56,7 @@ const Nav = () => {
             </Link>
           ))}
         </div>
-      </div>
+      </div>{" "}
     </div>
   );
 };
