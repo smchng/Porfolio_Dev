@@ -40,42 +40,61 @@ export default function Home() {
     },
   ];
 
+  const [windowWidth, setWindowWidth] = useState(
+    typeof window !== "undefined" ? window.innerWidth : 0
+  );
+  const [windowHeight, setWindowHeight] = useState(
+    typeof window !== "undefined" ? window.innerHeight : 0
+  );
+  const [aspectRatio, setAspectRatio] = useState(0);
   const [flexDirection, setFlexDirection] = useState("");
   const [projectSize, setProjectSize] = useState("");
   const [filterSize, setFilterSize] = useState("");
 
   useEffect(() => {
     const handleResize = () => {
-      const isSmallScreen = window.innerWidth < 768; // md breakpoint is 768px
-      const isLargeScreen = window.innerWidth >= 1300; // lg breakpoint is 1024px
-      const isShortHeight = window.innerHeight < 700;
+      // Check if window is defined (client-side)
+      if (typeof window !== "undefined") {
+        const newWindowWidth = window.innerWidth;
+        const newWindowHeight = window.innerHeight;
+        const newAspectRatio = newWindowWidth / newWindowHeight;
 
-      // Set flexDirection based on conditions
-      if (isShortHeight && (isSmallScreen || isLargeScreen)) {
-        setFlexDirection("grid-col-1");
-      } else {
-        setFlexDirection("grid-cols-2 gap-[2vw]");
-      }
-      if (isShortHeight && isSmallScreen) {
-        setProjectSize(" max-h-[40vh]");
-        setFilterSize("my-[5vh]");
-      } else {
-        setProjectSize(" max-h-[65vh]");
-        setFilterSize("mb-[1vh]");
+        setWindowWidth(newWindowWidth);
+        setWindowHeight(newWindowHeight);
+        setAspectRatio(newAspectRatio);
+
+        const isSmallScreen = newWindowWidth < 768; // md breakpoint is 768px
+        const isLargeScreen = newWindowWidth >= 1300; // lg breakpoint is 1024px
+        const isShortHeight = newWindowHeight < 700;
+
+        // Set flexDirection based on conditions
+        if (newAspectRatio >= 2) {
+          setFlexDirection("grid-cols-2 gap-[2vw]");
+        } else {
+          setFlexDirection("grid-col-1");
+        }
+
+        if (isShortHeight && isSmallScreen) {
+          setProjectSize("max-h-[40vh]");
+          setFilterSize("my-[5vh]");
+        } else {
+          setProjectSize("max-h-[65vh]");
+          setFilterSize("mb-[1vh]");
+        }
       }
     };
 
-    // Initial setup
+    // Call handleResize initially to set initial values
     handleResize();
 
-    // Attach event listener for window resize
+    // Attach the handleResize function to the window resize event
     window.addEventListener("resize", handleResize);
 
-    // Clean up event listener on component unmount
+    // Remove the event listener on component unmount
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, []); // Empty dependency array ensures the effect runs only once on mount
+  }, []);
 
   return (
     <div>
