@@ -45,3 +45,20 @@ export const ExpTable = ({ header, list }: TableProp) => {
     </div>
   );
 };
+export const ProjectTable = ({ header, component }: TableProp) => {
+  const skillList = (skill: string) => {
+    const skills = skill.split(",").map((individualSkill, skillIndex) => (
+      <p key={skillIndex} className="">
+        {individualSkill.trim()}
+      </p>
+    ));
+    return skills;
+  };
+  return (
+    <div className="pb-[3vh]">
+      <p className="text-blue pb-[1vh]">{header}</p>
+      <div className="border-b border-white"></div>
+      {component && <div className=" pt-[1vh]">{skillList(component)}</div>}
+    </div>
+  );
+};

@@ -13,42 +13,49 @@ export default function Home() {
       group: "EUNOIA DESIGN JAM",
       link: "eunoiadesign2024.com",
       skill: "tailwind, next.js",
+      page: "/projects/eunoia",
     },
     {
       title: "WEB DEVELOPER",
       group: "CASEIT",
       link: "https://www.caseit.org/",
       skill: "html/css, js",
+      page: "/caseit",
     },
     {
       title: "WEB DEVELOPER",
       group: "PIVOT",
       link: "https://pivot.caseit.org/",
       skill: "react, html/css",
+      page: "/pivot",
     },
     {
       title: "WEB DEVELOPER",
       group: "DISTILL BREW",
       link: "https://distill-brew.vercel.app/",
       skill: "next.js, tailwind",
+      page: "/distill",
     },
     {
       title: "DATA ANALYST",
       group: "COFFEE BEAN ANALYSIS",
       link: "https://observablehq.com/d/ac8f1f9714f7840e",
       skill: "sql, js",
+      page: "/coffee",
     },
     {
       title: "UX/UI RESEARCHER",
       group: "YVR KIOSK",
       link: "",
       skill: "figma, user reserch",
+      page: "/yvr",
     },
     {
       title: "DEVELOPER",
       group: "RECAP",
       link: "",
-      skill: "pythin",
+      skill: "python",
+      page: "/recap",
     },
   ];
 
@@ -110,14 +117,20 @@ export default function Home() {
 
   return (
     <div>
-      <div className="h-screen flex flex-col justify-end m-0 p-[2vw] ">
-        <h1 className="mb-0 leading-none text-[8vw]">CREATIVE</h1>
-        <h1 className="mt-0 text-[8vw]">DEVELOPER</h1>
+      <div className="p-[2vw] h-screen flex flex-col sm:flex-row justify-end">
+        <div className="flex flex-col justify-end m-0 ">
+          <h1 className="mb-0 leading-none text-[8vw]">CREATIVE</h1>
+          <h1 className="mt-0 text-[8vw]">DEVELOPER</h1>
+        </div>
+        <p className="flex flex-col justify-end m-0 pb-[2vw] md:pl-[2vw]">
+          I aim to enhance digital experiences with motion with a focus on
+          accessibility.{" "}
+        </p>{" "}
       </div>
       <Marquee autoFill className="space-x-3 tracking-widest text-lg my-[5vh]">
         DIGITAL ARCHIVE
       </Marquee>
-      <div className={`py-[5vh] h-screen grid ${flexDirection}`}>
+      <div className={`py-[5vh] grid ${flexDirection}`}>
         <Image
           src={img}
           alt="lighthouse"
@@ -137,6 +150,7 @@ export default function Home() {
                   group={item.group}
                   link={item.link}
                   skill={item.skill}
+                  page={item.page}
                 />
               ))}
             </div>
