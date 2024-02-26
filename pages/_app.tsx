@@ -7,6 +7,7 @@ import Home from "@/pages/index";
 import About from "@/pages/about";
 import Nav from "@/components/nav";
 import Footer from "@/components/footer";
+import Eunoia from "@/pages/projects/eunoia";
 
 import Head from "next/head";
 
@@ -42,6 +43,7 @@ export default function App() {
         <section className=" px-[1vw]">
           {currentPage === "/" && <Home />}
           {currentPage === "/about" && <About />}
+          {currentPage === "/projects/eunoia" && <Eunoia />}
         </section>
         <section className=" px-[1vw]">
           <Footer />

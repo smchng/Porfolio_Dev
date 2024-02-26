@@ -50,12 +50,17 @@ export default function About() {
     <div>
       <div className="md:h-screen pt-[20vh]">
         <h3>HELLO</h3>
-        <p className="py-[15vh] md:max-w-[40vw]">
-          intro parahraph I’m Samantha, a 3rd-year SIAT student from Vancouver.
-          Despite having several years of experience working with Adobe CC, I am
-          currently expanding my skill set by exploring 3D software for
-          architecture and user experience design, with a focus on creating
-          interfaces. My passion for design intro parargraph
+        <p className="py-[15vh] md:max-w-[50vw]">
+          I collaborate with talented designers to bring their visions to life,
+          aiming to elevate digital platforms through thoughtful designs and
+          engaging visuals. I prioritize exploration for creative possibilities,
+          value teamwork for maximizing project potential, and employ organized
+          workflows and clear deadlines to see projects through from start to
+          finish. I am dedicated to exploring innovative solutions and
+          optimizing efficiency in every project I undertake. With a diverse
+          background collaborating with school clubs, startups, and established
+          companies, I consistently contribute my skills to achieve their goals
+          and drive success. Let's bring fresh ideas to life together.
         </p>
         <div className="grid md:grid-cols-2 gap-5">
           {skillItems.map((item, index) => (
