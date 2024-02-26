@@ -34,7 +34,7 @@ export const ExpTable = ({ header, list }: TableProp) => {
       {list && (
         <div>
           {list.map((item, index) => (
-            <div key={index} className="grid grid-cols-3 space-y-[5vh]">
+            <div key={index} className="grid grid-cols-3 pb-[3vh]">
               <p>{item.title}</p>
               <p className="text-center">{item.component}</p>
               <p className="text-blue text-right">{item.date}</p>
