@@ -22,10 +22,10 @@ export default function About() {
       header: "DEVELOPER",
       text: "Specializes in motion gaphics and integrating animation Follow agile and scrum frameworks",
     },
-    {
-      header: "DESIGNER",
-      text: "Specializes in motion gaphics and integrating animation Follow agile and scrum frameworks",
-    },
+    // {
+    //   header: "DESIGNER",
+    //   text: "Specializes in motion gaphics and integrating animation Follow agile and scrum frameworks",
+    // },
   ];
 
   const expItems = [
