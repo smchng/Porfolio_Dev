@@ -60,7 +60,7 @@ img {
 }
 
 .scroll-container::-webkit-scrollbar-thumb {
-  background-color: #333; /* Color of the scrollbar thumb */
+  background-color: none; /* Color of the scrollbar thumb */
   border-radius: 6px; /* Rounded corners */
 }
 

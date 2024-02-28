@@ -3,7 +3,7 @@ import React, { useRef, useState, useEffect } from "react";
 import Link from "next/link";
 import { ProjectTable } from "@/components/table";
 
-export default function Eunoia() {
+export default function Distill() {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -27,8 +27,8 @@ export default function Eunoia() {
     >
       <ProjectContent
         title="EUNOIA 2024"
-        subtext="EVENT WEBSITE WITH INTERACTIVE STICKERS AND ANIMATION"
-        detail="Detail about the project"
+        subtext="E-COMMERCE WEBSITE FOR COFFEE APPLIANCES"
+        detail="Created and designed by a team of 4, this website is adapted from a 3D animation video based on the process of siphon coffee. The website is focused on accessible navigation and engaging movement"
       />
       <div className="w-screen relative whitespace-normal shrink-0">
         {" "}
@@ -41,21 +41,21 @@ export default function Eunoia() {
             <div className="pb-[3vh]">
               <p className="text-blue pb-[1vh]">EXT. LINKS</p>
               <div className="border-b border-white "></div>
-              <Link href="https://eunoiadesign.ca/ " target="_blank">
+              <Link href="https://distill-brew.vercel.app/" target="_blank">
                 <p className="pt-[1vh]">visit</p>
               </Link>
             </div>
-            <ProjectTable header="ROLE" component="Web Developer" />{" "}
-            <ProjectTable header="TIMELINE" component="8 weeks" />{" "}
             <ProjectTable
-              header="TOOLS"
-              component="React, Next.js, Tailwind, Git, Agile, Scrum"
-            />
+              header="ROLE"
+              component="Web Developer, Project Manager"
+            />{" "}
+            <ProjectTable header="TIMELINE" component="3 months" />{" "}
+            <ProjectTable header="TOOLS" component="Maya, Next.js, Tailwind" />
           </div>
         </div>
       </div>{" "}
       <div className="absolute bottom-0 left-0 w-full border-t border-white">
-        <Link href="/projects/distill">
+        <Link href="/projects/coffee">
           <p className="pt-[1vh] px-2 py-1 px-3 justify-end flex">next</p>
         </Link>
       </div>

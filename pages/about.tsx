@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import { SkillTable, ExpTable } from "@/components/table";
 import { TitleButton } from "@/components/button";
+import { TypingEllipsis } from "@/components/dots";
 
 export default function About() {
   const skillItems = [
@@ -88,7 +89,8 @@ export default function About() {
           optimizing efficiency in every project I undertake. With a diverse
           background collaborating with school clubs, startups, and established
           companies, I consistently contribute my skills to achieve their goals
-          and drive success. Let's bring fresh ideas to life together.
+          and drive success.{" "}
+          <strong>Let's bring fresh ideas to life together.</strong>
         </p>
         <div className="grid md:grid-cols-2 gap-5">
           {skillItems.map((item, index) => (
@@ -100,9 +102,10 @@ export default function About() {
           ))}
         </div>
       </div>
-      <h3 className="mt-[15vh]">
-        CREATING DYNAMIC DIGITAL EXPERIENCES AS A...
-      </h3>
+      <div className="flex items-end">
+        <h3 className="mt-[15vh]">CREATING DYNAMIC DIGITAL EXPERIENCES AS A</h3>
+        <TypingEllipsis />
+      </div>
       <div className="md:flex md:flex-col">
         {buttonItems.map((item, index) => (
           <TitleButton key={index} header={item.header} text={item.text} />

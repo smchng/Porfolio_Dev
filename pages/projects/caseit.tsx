@@ -3,7 +3,7 @@ import React, { useRef, useState, useEffect } from "react";
 import Link from "next/link";
 import { ProjectTable } from "@/components/table";
 
-export default function Eunoia() {
+export default function Caseit() {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -26,8 +26,8 @@ export default function Eunoia() {
       onWheel={handleScroll}
     >
       <ProjectContent
-        title="EUNOIA 2024"
-        subtext="EVENT WEBSITE WITH INTERACTIVE STICKERS AND ANIMATION"
+        title="CASEIT 2024"
+        subtext="INFORMATION SITE FOR INTERNATIONAL CASE COMPETITION"
         detail="Detail about the project"
       />
       <div className="w-screen relative whitespace-normal shrink-0">
@@ -41,16 +41,13 @@ export default function Eunoia() {
             <div className="pb-[3vh]">
               <p className="text-blue pb-[1vh]">EXT. LINKS</p>
               <div className="border-b border-white "></div>
-              <Link href="https://eunoiadesign.ca/ " target="_blank">
+              <Link href="https://caseit.org/" target="_blank">
                 <p className="pt-[1vh]">visit</p>
               </Link>
             </div>
             <ProjectTable header="ROLE" component="Web Developer" />{" "}
-            <ProjectTable header="TIMELINE" component="8 weeks" />{" "}
-            <ProjectTable
-              header="TOOLS"
-              component="React, Next.js, Tailwind, Git, Agile, Scrum"
-            />
+            <ProjectTable header="TIMELINE" component="5 months" />{" "}
+            <ProjectTable header="TOOLS" component="HTML, CSS, JS" />
           </div>
         </div>
       </div>{" "}
