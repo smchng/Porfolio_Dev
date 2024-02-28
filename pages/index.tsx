@@ -117,7 +117,7 @@ export default function Home() {
 
   return (
     <div>
-      <div className="p-[2vw] h-screen flex flex-col sm:flex-row justify-end">
+      <div className="p-[2vw] h-screen flex flex-col sm:flex-row justify-end md:justify-start">
         <div className="flex flex-col justify-end m-0 ">
           <h1 className="mb-0 leading-none text-[8vw]">CREATIVE</h1>
           <h1 className="mt-0 text-[8vw]">DEVELOPER</h1>
