@@ -34,10 +34,13 @@ export const ExpTable = ({ header, list }: TableProp) => {
       {list && (
         <div>
           {list.map((item, index) => (
-            <div key={index} className="grid grid-cols-3 pb-[3vh]">
-              <p>{item.title}</p>
-              <p className="text-center">{item.component}</p>
-              <p className="text-blue text-right">{item.date}</p>
+            <div
+              key={index}
+              className="grid grid-cols-5 pb-[3vh] hover:underline"
+            >
+              <p className="col-span-2">{item.title}</p>
+              <p>{item.component}</p>
+              <p className="text-blue text-right col-span-2">{item.date}</p>
             </div>
           ))}
         </div>

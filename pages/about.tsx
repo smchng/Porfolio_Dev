@@ -20,7 +20,7 @@ export default function About() {
   const buttonItems = [
     {
       header: "DEVELOPER",
-      text: "Specializes in motion gaphics and integrating animation Follow agile and scrum frameworks",
+      text: "Programming is like and on-going puzzle to me. I love solve the riddle of an algorithm. Whether I am trapped in my room or in a study group with friends, I enjoy exploring and learning what programming can offer.",
     },
     // {
     //   header: "DESIGNER",
@@ -28,11 +28,39 @@ export default function About() {
     // },
   ];
 
-  const expItems = [
+  const curItems = [
     {
-      date: "(JAN 2022 - NOV 2022)",
-      title: "DIGITAL ARTIST",
-      component: "Eastside Games",
+      date: "(2020-2025)",
+      title: "SFU",
+      component: "BSc. Interactive Arts & Tech",
+    },
+    {
+      date: "(2021-2025)",
+      title: "SFU",
+      component: "Minor Philosophy",
+    },
+    {
+      date: "(2024-2025)",
+      title: "SFU",
+      component: "Minor Computer Science",
+    },
+  ];
+
+  const preItems = [
+    {
+      date: "(2023-2024)",
+      title: "WEB DEVELOPER",
+      component: "Eunoia Design Jam",
+    },
+    {
+      date: "(2023-2024)",
+      title: "WEB DEVELOPER",
+      component: "CaseIT",
+    },
+    {
+      date: "(2023-2024)",
+      title: "WEB DEVELOPER",
+      component: "PIVOT",
     },
     {
       date: "(JAN 2022 - NOV 2022)",
@@ -40,9 +68,9 @@ export default function About() {
       component: "Eastside Games",
     },
     {
-      date: "(JAN 2022 - NOV 2022)",
-      title: "DIGITAL ARTIST",
-      component: "Eastside Games",
+      date: "(2021)",
+      title: "VIDEOGRAPHER",
+      component: "University of British Columbia",
     },
   ];
 
@@ -81,8 +109,8 @@ export default function About() {
         ))}
       </div>
       <div>
-        <ExpTable header="CURRENTLY" list={expItems} />
-        <ExpTable header="PREVIOUSLY" list={expItems} />
+        <ExpTable header="CURRENTLY" list={curItems} />
+        <ExpTable header="PREVIOUSLY" list={preItems} />
       </div>
     </div>
   );
