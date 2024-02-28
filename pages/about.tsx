@@ -115,6 +115,12 @@ export default function About() {
         <ExpTable header="CURRENTLY" list={curItems} />
         <ExpTable header="PREVIOUSLY" list={preItems} />
       </div>
+      <div className="h-screen flex justify-center items-center">
+        <h1>LET'S WORK TOGETHER</h1>
+        {/* <div className="flex items-end">
+          <TypingEllipsis />
+        </div> */}
+      </div>
     </div>
   );
 }
