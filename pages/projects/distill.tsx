@@ -34,7 +34,7 @@ export default function Distill() {
         {" "}
         {/* <h4 className="text-blue py-[15vh]">EUNOIA 2024</h4> */}
         <div className="grid grid-cols-2 pt-[25vh]">
-          <h2 className="text-[40px]">
+          <h2 className=" text-base lg:text-lg">
             ABOUT <br /> THE PROJECT
           </h2>{" "}
           <div className="mr-[10vw]">

@@ -132,7 +132,7 @@ export default function Home() {
 
   return (
     <div>
-      <div className="p-[2vw] h-screen flex flex-col sm:flex-row justify-end md:justify-start">
+      <div className="p-[2vw] h-screen flex flex-col sm:flex-row justify-center md:justify-start text-center md:text-left">
         <div className="flex flex-col justify-end m-0 ">
           <h1 className="mb-0 leading-none text-[8vw]">CREATIVE</h1>
           <h1 className="mt-0 text-[8vw]">DEVELOPER</h1>
@@ -142,7 +142,10 @@ export default function Home() {
           accessibility.{" "}
         </p>{" "}
       </div>
-      <Marquee autoFill className="space-x-3 tracking-widest text-lg my-[5vh]">
+      <Marquee
+        autoFill
+        className="space-x-3 tracking-widest md:text-lg my-[5vh]"
+      >
         DIGITAL ARCHIVE
       </Marquee>
       <div className={`py-[5vh] grid ${flexDirection}`}>
@@ -153,7 +156,7 @@ export default function Home() {
         ></Image>
         <div>
           <div
-            className={`${filterSize} pb-[1vh] flex space-x-2 text-blue cursor-pointer`}
+            className={`${filterSize} md:pb-[1vh] pt-[3vh] flex space-x-2 text-blue cursor-pointer`}
           >
             <p
               onClick={() => handleFilterClick("all")}

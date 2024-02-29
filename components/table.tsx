@@ -36,11 +36,15 @@ export const ExpTable = ({ header, list }: TableProp) => {
           {list.map((item, index) => (
             <div
               key={index}
-              className="grid grid-cols-5 pb-[3vh] hover:underline"
+              className="md:hover:underline grid grid-cols-2 pb-[2vh]"
             >
-              <p className="col-span-2">{item.title}</p>
-              <p>{item.component}</p>
-              <p className="text-blue text-right col-span-2">{item.date}</p>
+              <div className="md:grid md:grid-cols-2">
+                <p>{item.title}</p>
+                <p>{item.component}</p>{" "}
+              </div>
+              <p className="text-blue text-right flex justify-end items-end">
+                {item.date}
+              </p>
             </div>
           ))}
         </div>
@@ -60,7 +64,7 @@ export const ProjectTable = ({ header, component }: TableProp) => {
   return (
     <div className="pb-[3vh]">
       <p className="text-blue pb-[1vh]">{header}</p>
-      <div className="border-b border-white"></div>
+      <div className="border-b border-white "></div>
       {component && <div className=" pt-[1vh]">{skillList(component)}</div>}
     </div>
   );

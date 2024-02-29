@@ -76,7 +76,7 @@ export default function About() {
   ];
 
   return (
-    <div>
+    <div className="px-[3vw]">
       <div className="md:h-screen pt-[20vh]">
         <h3>HELLO</h3>
         <p className="py-[15vh] md:max-w-[50vw]">
@@ -116,7 +116,9 @@ export default function About() {
         <ExpTable header="PREVIOUSLY" list={preItems} />
       </div>
       <div className="h-screen flex justify-center items-center">
-        <h1>LET'S WORK TOGETHER</h1>
+        <h1 className="max-w-[80vw text-center text-base sm:text-lg">
+          LET'S WORK TOGETHER
+        </h1>
         {/* <div className="flex items-end">
           <TypingEllipsis />
         </div> */}
