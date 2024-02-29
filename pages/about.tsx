@@ -102,10 +102,11 @@ export default function About() {
           ))}
         </div>
       </div>
-      <div className="flex items-end">
-        <h3 className="mt-[15vh]">CREATING DYNAMIC DIGITAL EXPERIENCES AS A</h3>
-        <TypingEllipsis />
-      </div>
+
+      <h3 className="mt-[15vh] ">
+        CREATING DYNAMIC DIGITAL EXPERIENCES AS A<TypingEllipsis />
+      </h3>
+
       <div className="md:flex md:flex-col">
         {buttonItems.map((item, index) => (
           <TitleButton key={index} header={item.header} text={item.text} />

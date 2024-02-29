@@ -20,7 +20,9 @@ export const SkillTable = ({ header, component }: TableProp) => {
       <p>{header}</p>
       <div className="border-b border-white my-[2vh]"></div>
       {component && (
-        <div className="grid grid-cols-3">{skillList(component)}</div>
+        <div className="grid grid-cols-2 md:grid-cols-3">
+          {skillList(component)}
+        </div>
       )}
     </div>
   );

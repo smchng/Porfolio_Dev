@@ -75,9 +75,11 @@ export default function Eunoia() {
           </div>
         </div>
       </div>{" "}
-      <div className="md:absolute bottom-0 left-0 w-full border-t border-white">
+      <div className="md:absolute bottom-0 left-0 w-full border-t border-white mb-[2vh] sm:m-0">
         <Link href="/projects/distill">
-          <p className="pt-[1vh] px-2 py-1 px-3 justify-end flex">next</p>
+          <p className="pt-[1vh] px-2 py-1 px-3 justify-center md:justify-end flex ">
+            next
+          </p>
         </Link>
       </div>
     </div>
