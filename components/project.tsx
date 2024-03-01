@@ -80,7 +80,7 @@ export const ProjectContent = ({ title, detail, subtext }: ProjectProps) => {
     <div className="w-screen relative whitespace-normal shrink-0">
       <h4 className="text-blue py-[15vh]">{title}</h4>
 
-      <h2 className="text-[35px] py-[5vh] md:max-w-[70vw] text-base lg:text-lg">
+      <h2 className="text-[35px] py-[5vh] md:max-w-[70vw] text-base lg:text-[40px] leading-none">
         {subtext}
       </h2>
       <p className=" max-w-[50vw]">{detail}</p>

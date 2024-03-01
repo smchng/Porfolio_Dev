@@ -7,7 +7,9 @@ type ButtonProp = {
 
 export const TitleButton = ({ header, text }: ButtonProp) => {
   const [isHovered, setIsHovered] = useState(false);
-  const [isMdScreen, setIsMdScreen] = useState(window.innerWidth >= 768);
+  const [isMdScreen, setIsMdScreen] = useState(
+    typeof window !== "undefined" ? window.innerWidth >= 768 : false
+  );
 
   const handleMouseEnter = () => {
     setIsHovered(isMdScreen);
