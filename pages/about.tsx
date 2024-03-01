@@ -21,7 +21,7 @@ export default function About() {
   const buttonItems = [
     {
       header: "DEVELOPER",
-      text: "Programming is like and on-going puzzle to me. I love solve the riddle of an algorithm. Whether I am trapped in my room or in a study group with friends, I enjoy exploring and learning what programming can offer.",
+      text: "Programming is like and on-going puzzle to me. I love solve the riddle of an algorithm. Whether I am in my room or in a study group with friends, I enjoy exploring and learning what programming can offer.",
     },
     // {
     //   header: "DESIGNER",
@@ -92,7 +92,7 @@ export default function About() {
           and drive success.{" "}
           <strong>Let's bring fresh ideas to life together.</strong>
         </p>
-        <div className="grid md:grid-cols-2 gap-5">
+        <div className="grid md:grid-cols-2 gap-5 ">
           {skillItems.map((item, index) => (
             <SkillTable
               key={index}
@@ -102,17 +102,19 @@ export default function About() {
           ))}
         </div>
       </div>
+      <div className="my-[35vh] ">
+        <h3>
+          CREATING DYNAMIC DIGITAL EXPERIENCES AS A<TypingEllipsis />
+        </h3>
 
-      <h3 className="mt-[15vh] ">
-        CREATING DYNAMIC DIGITAL EXPERIENCES AS A<TypingEllipsis />
-      </h3>
-
-      <div className="md:flex md:flex-col">
-        {buttonItems.map((item, index) => (
-          <TitleButton key={index} header={item.header} text={item.text} />
-        ))}
+        <div className="md:flex ">
+          {buttonItems.map((item, index) => (
+            <TitleButton key={index} header={item.header} text={item.text} />
+          ))}
+        </div>
       </div>
       <div>
+        <h3>MY EXPERIENCE</h3>
         <ExpTable header="CURRENTLY" list={curItems} />
         <ExpTable header="PREVIOUSLY" list={preItems} />
       </div>
