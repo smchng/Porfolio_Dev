@@ -9,15 +9,26 @@ type ProjectProps = {
   link?: string;
   detail?: string;
   subtext?: string;
+  onMouseOver?: () => void;
+  hovered?: boolean;
 };
 
-export const Project = ({ title, group, link, skill, page }: ProjectProps) => {
+export const Project = ({
+  title,
+  group,
+  link,
+  skill,
+  page,
+  onMouseOver,
+  hovered,
+}: ProjectProps) => {
   const resolvedPage = page !== undefined ? page : "";
   const resolvedLink = link !== undefined ? link : "";
   const resolvedSkill = skill !== undefined ? skill : "";
-  const [isHovered, setIsHovered] = useState(false);
+  const [isHovered, setIsHovered] = useState(hovered || false);
   const handleMouseEnter = () => {
     setIsHovered(true);
+    onMouseOver && onMouseOver();
   };
 
   const handleMouseLeave = () => {

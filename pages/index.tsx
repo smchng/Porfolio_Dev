@@ -4,7 +4,12 @@ import Image from "next/image";
 import Marquee from "react-fast-marquee";
 import { Project } from "@/components/project";
 
-import img from "@/public/imgs/stock.jpg";
+import img from "@/public/imgs/stock.png";
+import eunoia from "@/public/imgs/eunoia.jpg";
+import caseit from "@/public/imgs/caseit.png";
+import coffee from "@/public/imgs/coffee.png";
+import distill from "@/public/imgs/distill.png";
+import yvr from "@/public/imgs/yvr.png";
 
 export default function Home() {
   const [selectedTag, setSelectedTag] = useState("");
@@ -17,6 +22,7 @@ export default function Home() {
       skill: "tailwind, next.js",
       page: "/projects/eunoia",
       tag: "dev",
+      img: eunoia,
     },
     {
       title: "WEB DEVELOPER",
@@ -25,6 +31,7 @@ export default function Home() {
       skill: "html/css, js",
       page: "/projects/caseit",
       tag: "dev",
+      img: caseit,
     },
     {
       title: "WEB DEVELOPER",
@@ -33,6 +40,7 @@ export default function Home() {
       skill: "react, html/css",
       page: "/projects/pivot",
       tag: "dev",
+      img: eunoia,
     },
     {
       title: "WEB DEVELOPER",
@@ -41,6 +49,7 @@ export default function Home() {
       skill: "next.js, tailwind",
       page: "/projects/distill",
       tag: "dev",
+      img: distill,
     },
     {
       title: "DATA ANALYST",
@@ -49,6 +58,7 @@ export default function Home() {
       skill: "sql, js",
       page: "/projects/coffee",
       tag: "research",
+      img: coffee,
     },
     {
       title: "UX/UI RESEARCHER",
@@ -57,6 +67,7 @@ export default function Home() {
       skill: "figma, user reserch",
       page: "/projects/yvr",
       tag: "research",
+      img: yvr,
     },
     {
       title: "DEVELOPER",
@@ -65,6 +76,7 @@ export default function Home() {
       skill: "python",
       page: "/projects/recap",
       tag: "dev",
+      img: eunoia,
     },
   ].filter((item) => selectedTag === "all" || item.tag === selectedTag);
   const handleFilterClick = (tag: string) => {
@@ -130,6 +142,12 @@ export default function Home() {
     };
   }, []);
 
+  const [hoveredProject, setHoveredProject] = useState<number | null>(null);
+
+  const handleProjectHover = (index: number) => {
+    setHoveredProject(index);
+  };
+
   return (
     <div>
       <div className="p-[2vw] h-screen flex flex-col sm:flex-row justify-center md:justify-start text-center md:text-left">
@@ -150,13 +168,14 @@ export default function Home() {
       </Marquee>
       <div className={`py-[5vh] grid ${flexDirection}`}>
         <Image
-          src={img}
-          alt="lighthouse"
+          src={hoveredProject !== null ? ProjectItems[hoveredProject].img : img}
+          alt="project title card"
+          style={{ height: "80vh", width: "100%" }}
           className={"max-h-[80vh] 2xl:max-h-[70vh] align-center object-cover "}
         ></Image>
         <div>
           <div
-            className={`${filterSize} md:pb-[1vh] pt-[3vh] flex space-x-2 text-blue cursor-pointer`}
+            className={`${filterSize} md:pb-[1vh] pt-[1vh] flex space-x-2 text-blue cursor-pointer`}
           >
             <p
               onClick={() => handleFilterClick("all")}
@@ -190,6 +209,8 @@ export default function Home() {
                   link={item.link}
                   skill={item.skill}
                   page={item.page}
+                  onMouseOver={() => handleProjectHover(index)}
+                  hovered={index === hoveredProject}
                 />
               ))}
             </div>
