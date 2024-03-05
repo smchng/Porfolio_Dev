@@ -7,34 +7,59 @@ export default function Distill() {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    document.body.style.overflowY = "hidden";
+    document.body.style.overflowY = getInitialOverflowStyle();
+
+    window.addEventListener("orientationchange", handleOrientationChange);
 
     return () => {
-      document.body.style.overflowY = "auto";
+      window.removeEventListener("orientationchange", handleOrientationChange);
     };
   }, []);
 
+  const getInitialOverflowStyle = () => {
+    return isPortrait() ? "auto" : "hidden";
+  };
+
+  const isPortrait = () => {
+    return window.innerHeight > window.innerWidth;
+  };
+
+  const handleOrientationChange = () => {
+    document.body.style.overflowY = getInitialOverflowStyle();
+  };
+
   const handleScroll = (e: React.WheelEvent<HTMLDivElement>) => {
     if (containerRef.current) {
-      containerRef.current.scrollLeft += e.deltaY;
+      const container = containerRef.current;
+      const isScrollable = container.scrollWidth > container.clientWidth;
+
+      if (isScrollable) {
+        container.scrollLeft += e.deltaY;
+        e.preventDefault(); // Prevent vertical scrolling
+      }
     }
   };
+
   return (
     <div
       ref={containerRef}
-      className="flex flex-row h-screen overflow-x-scroll scroll-container"
+      className="md:flex md:flex-row md:h-screen md:overflow-x-scroll scroll-container px-[3vw]"
       onWheel={handleScroll}
     >
       <ProjectContent
         title="EUNOIA 2024"
         subtext="E-COMMERCE WEBSITE FOR COFFEE APPLIANCES"
-        detail="Created and designed by a team of 4, this website is adapted from a 3D animation video based on the process of siphon coffee. The website is focused on accessible navigation and engaging movement"
+        detail="Aims to provide customers easy access to quality equipment to suit their needs. Includes introduction to the art of brewing and instructions on how to create a quality brew.
+
+Designed and implemented an e-commerce website that showcases quality coffee equipment. Utilizes 3D textured and rendered models of the product to introduce users to the products.
+
+Created and designed by a team of 4, this website is adapted from a 3D animation video based on the process of siphon coffee. The website is focused on accessible navigation and engaging movement"
       />
       <div className="w-screen relative whitespace-normal shrink-0">
         {" "}
         {/* <h4 className="text-blue py-[15vh]">EUNOIA 2024</h4> */}
-        <div className="grid grid-cols-2 pt-[25vh]">
-          <h2 className=" text-base lg:text-lg">
+        <div className="md:grid md:grid-cols-2 pt-[25vh]">
+          <h2 className="text-[40px] text-base lg:text-lg pb-[5vh]">
             ABOUT <br /> THE PROJECT
           </h2>{" "}
           <div className="mr-[10vw]">

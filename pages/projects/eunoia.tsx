@@ -49,7 +49,7 @@ export default function Eunoia() {
       <ProjectContent
         title="EUNOIA 2024"
         subtext="EVENT WEBSITE WITH INTERACTIVE STICKERS AND ANIMATION"
-        detail="Detail about the project"
+        detail="Developed the website for SFU Eunoia’s 2024 design Jam that featured events schedule, sponsors, and legacy. The site includes interactive stickers representing key aspects of the event and featuring sponsors, serving as the central hub for essential information on schedule and activities. The event represents the transformation of an idea to real-life through collaboration and unrestricted exploration."
       />
       <div className="w-screen relative whitespace-normal shrink-0">
         {" "}
@@ -74,7 +74,8 @@ export default function Eunoia() {
             />
           </div>
         </div>
-      </div>{" "}
+      </div>
+      <div></div>
       <div className="md:absolute bottom-0 left-0 w-full border-t border-white mb-[2vh] sm:m-0">
         <Link href="/projects/distill">
           <p className="pt-[1vh] px-2 py-1 px-3 justify-center md:justify-end flex ">

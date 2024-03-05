@@ -10,6 +10,7 @@ import caseit from "@/public/imgs/caseit.png";
 import coffee from "@/public/imgs/coffee.png";
 import distill from "@/public/imgs/distill.png";
 import yvr from "@/public/imgs/yvr.png";
+import pivot from "@/public/imgs/pivot.webp";
 
 export default function Home() {
   const [selectedTag, setSelectedTag] = useState("");
@@ -40,7 +41,7 @@ export default function Home() {
       skill: "react, html/css",
       page: "/projects/pivot",
       tag: "dev",
-      img: eunoia,
+      img: pivot,
     },
     {
       title: "WEB DEVELOPER",

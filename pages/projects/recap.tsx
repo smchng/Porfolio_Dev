@@ -7,22 +7,43 @@ export default function Recap() {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    document.body.style.overflowY = "hidden";
+    document.body.style.overflowY = getInitialOverflowStyle();
+
+    window.addEventListener("orientationchange", handleOrientationChange);
 
     return () => {
-      document.body.style.overflowY = "auto";
+      window.removeEventListener("orientationchange", handleOrientationChange);
     };
   }, []);
 
+  const getInitialOverflowStyle = () => {
+    return isPortrait() ? "auto" : "hidden";
+  };
+
+  const isPortrait = () => {
+    return window.innerHeight > window.innerWidth;
+  };
+
+  const handleOrientationChange = () => {
+    document.body.style.overflowY = getInitialOverflowStyle();
+  };
+
   const handleScroll = (e: React.WheelEvent<HTMLDivElement>) => {
     if (containerRef.current) {
-      containerRef.current.scrollLeft += e.deltaY;
+      const container = containerRef.current;
+      const isScrollable = container.scrollWidth > container.clientWidth;
+
+      if (isScrollable) {
+        container.scrollLeft += e.deltaY;
+        e.preventDefault(); // Prevent vertical scrolling
+      }
     }
   };
+
   return (
     <div
       ref={containerRef}
-      className="flex flex-row h-screen overflow-x-scroll scroll-container"
+      className="md:flex md:flex-row md:h-screen md:overflow-x-scroll scroll-container px-[3vw]"
       onWheel={handleScroll}
     >
       <ProjectContent
@@ -33,8 +54,8 @@ export default function Recap() {
       <div className="w-screen relative whitespace-normal shrink-0">
         {" "}
         {/* <h4 className="text-blue py-[15vh]">EUNOIA 2024</h4> */}
-        <div className="grid grid-cols-2 pt-[25vh]">
-          <h2 className=" text-base lg:text-lg">
+        <div className="md:grid md:grid-cols-2 pt-[25vh]">
+          <h2 className="text-[40px] text-base lg:text-lg pb-[5vh]">
             ABOUT <br /> THE PROJECT
           </h2>{" "}
           <div className="mr-[10vw]">
