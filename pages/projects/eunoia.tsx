@@ -1,4 +1,8 @@
-import { ProjectContent } from "@/components/project";
+import {
+  ProjectContent,
+  ProjectVideo,
+  ProjectText,
+} from "@/components/project";
 import React, { useRef, useState, useEffect } from "react";
 import Link from "next/link";
 import { ProjectTable } from "@/components/table";
@@ -75,7 +79,13 @@ export default function Eunoia() {
           </div>
         </div>
       </div>
-      <div></div>
+      <ProjectVideo title="/video/eunoia-sticker.webm" detail="video/webm" />
+      <ProjectText detail=" Visitor of the site are able to move stickers and interact with the sites features which reflects Eunoia's open-minded and explorative identity " />
+
+      <ProjectVideo
+        title="/video/eunoia-testimonial.webm"
+        detail="video/webm"
+      />
       <div className="md:absolute bottom-0 left-0 w-full border-t border-white mb-[2vh] sm:m-0">
         <Link href="/projects/distill">
           <p className="pt-[1vh] px-2 py-1 px-3 justify-center md:justify-end flex ">

@@ -87,3 +87,27 @@ export const ProjectContent = ({ title, detail, subtext }: ProjectProps) => {
     </div>
   );
 };
+
+export const ProjectVideo = ({ title, detail }: ProjectProps) => {
+  return (
+    <div className=" w-screen relative whitespace-normal shrink-0 flex pt-[5vh] justify-center items-center ">
+      <video
+        className="h-[80%] w-auto overflow-hidden object-cover border border-[1px] border-brown"
+        autoPlay
+        muted
+        loop
+      >
+        <source src={title} type={detail} />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  );
+};
+
+export const ProjectText = ({ detail }: ProjectProps) => {
+  return (
+    <div className="w-[25vw] flex items-center relative whitespace-normal shrink-0">
+      <p>{detail}</p>
+    </div>
+  );
+};
