@@ -1,7 +1,12 @@
-import { ProjectContent } from "@/components/project";
+import {
+  ProjectContent,
+  ProjectVideo,
+  ProjectText,
+  NextProject,
+} from "@/components/project";
 import React, { useRef, useState, useEffect } from "react";
 import Link from "next/link";
-import { ProjectTable } from "@/components/table";
+import { ProjectTable, ProjectLink } from "@/components/table";
 
 export default function Pivot() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -51,7 +56,7 @@ export default function Pivot() {
         subtext="INFORMATION SITE FOR CASE COMPETITION"
         detail="Updated and refined site features on BC’s business technology management case competition. Applied UI changes to links and interactions to improve user navigation. Updated information pages on sponsors, organizing committee, and legacy."
       />
-      <div className="w-screen relative whitespace-normal shrink-0">
+      <div className="md:w-screen relative whitespace-normal shrink-0">
         {" "}
         {/* <h4 className="text-blue py-[15vh]">EUNOIA 2024</h4> */}
         <div className="md:grid md:grid-cols-2 pt-[25vh]">
@@ -59,24 +64,23 @@ export default function Pivot() {
             ABOUT <br /> THE PROJECT
           </h2>{" "}
           <div className="mr-[10vw]">
-            <div className="pb-[3vh]">
-              <p className="text-blue pb-[1vh]">EXT. LINKS</p>
-              <div className="border-b border-white "></div>
-              <Link href="https://pivot.caseit.org/" target="_blank">
-                <p className="pt-[1vh]">visit</p>
-              </Link>
-            </div>
+            <ProjectLink
+              header="EXT. LINKS"
+              component="https://pivot.caseit.org/"
+            />
             <ProjectTable header="ROLE" component="Web Developer" />{" "}
             <ProjectTable header="TIMELINE" component="4 months" />{" "}
             <ProjectTable header="TOOLS" component="React" />
           </div>
         </div>
       </div>{" "}
-      <div className="absolute bottom-0 left-0 w-full border-t border-white">
-        <Link href="/projects/distill">
-          <p className="pt-[1vh] px-2 py-1 px-3 justify-end flex">next</p>
-        </Link>
-      </div>
+      <ProjectVideo title="/video/pivot-nav.webm" detail="video/webm" />
+      <ProjectText detail="Added colour changes to reflect PIVOT brand identity. Navigated and altered the React components to alter the colour depending on the item as well as maintain brands colour rules." />
+      <ProjectVideo title="/video/pivot-about.webm" detail="video/webm" />{" "}
+      <ProjectText detail="Refreshed information about the legacy of the case competition in order to display PIVOT's timeline accurately." />
+      <ProjectVideo title="/video/pivot-oc.webm" detail="video/webm" />
+      <ProjectText detail="Revamped the organizing commitee's page with the new members of 2024's team," />
+      <NextProject link="/projects/distill" />
     </div>
   );
 }

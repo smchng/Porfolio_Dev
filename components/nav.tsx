@@ -15,7 +15,7 @@ const Nav = () => {
       text: "ABOUT",
     },
     {
-      link: "/",
+      link: "/files/resume.pdf",
       text: "RESUME",
     },
     {

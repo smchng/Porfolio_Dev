@@ -1,7 +1,12 @@
-import { ProjectContent } from "@/components/project";
+import {
+  ProjectContent,
+  ProjectVideo,
+  ProjectText,
+  NextProject,
+} from "@/components/project";
 import React, { useRef, useState, useEffect } from "react";
 import Link from "next/link";
-import { ProjectTable } from "@/components/table";
+import { ProjectTable, ProjectLink } from "@/components/table";
 
 export default function Distill() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -47,7 +52,7 @@ export default function Distill() {
       onWheel={handleScroll}
     >
       <ProjectContent
-        title="EUNOIA 2024"
+        title="DISTILL BREW"
         subtext="E-COMMERCE WEBSITE FOR COFFEE APPLIANCES"
         detail="Aims to provide customers easy access to quality equipment to suit their needs. Includes introduction to the art of brewing and instructions on how to create a quality brew.
 
@@ -55,7 +60,7 @@ Designed and implemented an e-commerce website that showcases quality coffee equ
 
 Created and designed by a team of 4, this website is adapted from a 3D animation video based on the process of siphon coffee. The website is focused on accessible navigation and engaging movement"
       />
-      <div className="w-screen relative whitespace-normal shrink-0">
+      <div className="md:w-screen relative whitespace-normal shrink-0">
         {" "}
         {/* <h4 className="text-blue py-[15vh]">EUNOIA 2024</h4> */}
         <div className="md:grid md:grid-cols-2 pt-[25vh]">
@@ -63,13 +68,10 @@ Created and designed by a team of 4, this website is adapted from a 3D animation
             ABOUT <br /> THE PROJECT
           </h2>{" "}
           <div className="mr-[10vw]">
-            <div className="pb-[3vh]">
-              <p className="text-blue pb-[1vh]">EXT. LINKS</p>
-              <div className="border-b border-white "></div>
-              <Link href="https://distill-brew.vercel.app/" target="_blank">
-                <p className="pt-[1vh]">visit</p>
-              </Link>
-            </div>
+            <ProjectLink
+              header="EXT. LINKS"
+              component="https://distill-brew.vercel.app/"
+            />
             <ProjectTable
               header="ROLE"
               component="Web Developer, Project Manager"
@@ -79,11 +81,15 @@ Created and designed by a team of 4, this website is adapted from a 3D animation
           </div>
         </div>
       </div>{" "}
-      <div className="absolute bottom-0 left-0 w-full border-t border-white">
-        <Link href="/projects/coffee">
-          <p className="pt-[1vh] px-2 py-1 px-3 justify-end flex">next</p>
-        </Link>
-      </div>
+      <ProjectVideo title="/video/distill-set.webm" detail="video/webm" />
+      <ProjectText detail=" Introduces Distill's carefully crafted siphon soffee set that includes the buner, paddle, filter, and machine. Information about the item is provided for consumers to explore. As well as 3D rendered examples of the items to demonstrate its use and capabilities." />
+      <ProjectVideo title="/video/distill-water.webm" detail="video/webm" />
+      <ProjectText detail="Focus on the videos for better comprehension of their functions" />
+      <ProjectVideo title="/video/distill-checkout.webm" detail="video/webm" />
+      <ProjectText detail="Simple and intuitive checkout process with clear points of actions to complete the process quickly and smoothly." />
+      <ProjectVideo title="/video/distill-review.webm" detail="video/webm" />
+      <ProjectText detail="Hear from out customers and read their reviews at your own pace." />
+      <NextProject link="/projects/coffee" />
     </div>
   );
 }

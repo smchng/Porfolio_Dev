@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 type TableProp = {
   header?: string;
   component?: string;
@@ -68,6 +70,18 @@ export const ProjectTable = ({ header, component }: TableProp) => {
       <p className="text-blue pb-[1vh]">{header}</p>
       <div className="border-b border-white "></div>
       {component && <div className=" pt-[1vh]">{skillList(component)}</div>}
+    </div>
+  );
+};
+export const ProjectLink = ({ header, component }: TableProp) => {
+  const resolvedLink = component !== undefined ? component : "";
+  return (
+    <div className="pb-[3vh]">
+      <p className="text-blue pb-[1vh]">{header}</p>
+      <div className="border-b border-white "></div>
+      <Link href={resolvedLink} target="_blank">
+        <p className="pt-[1vh] hover:text-blue">visit</p>
+      </Link>
     </div>
   );
 };

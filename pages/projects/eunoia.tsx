@@ -2,54 +2,15 @@ import {
   ProjectContent,
   ProjectVideo,
   ProjectText,
+  ScrollEffect,
 } from "@/components/project";
 import React, { useRef, useState, useEffect } from "react";
 import Link from "next/link";
-import { ProjectTable } from "@/components/table";
+import { ProjectTable, ProjectLink } from "@/components/table";
 
 export default function Eunoia() {
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    document.body.style.overflowY = getInitialOverflowStyle();
-
-    window.addEventListener("orientationchange", handleOrientationChange);
-
-    return () => {
-      window.removeEventListener("orientationchange", handleOrientationChange);
-    };
-  }, []);
-
-  const getInitialOverflowStyle = () => {
-    return isPortrait() ? "auto" : "hidden";
-  };
-
-  const isPortrait = () => {
-    return window.innerHeight > window.innerWidth;
-  };
-
-  const handleOrientationChange = () => {
-    document.body.style.overflowY = getInitialOverflowStyle();
-  };
-
-  const handleScroll = (e: React.WheelEvent<HTMLDivElement>) => {
-    if (containerRef.current) {
-      const container = containerRef.current;
-      const isScrollable = container.scrollWidth > container.clientWidth;
-
-      if (isScrollable) {
-        container.scrollLeft += e.deltaY;
-        e.preventDefault(); // Prevent vertical scrolling
-      }
-    }
-  };
-
   return (
-    <div
-      ref={containerRef}
-      className="md:flex md:flex-row md:h-screen md:overflow-x-scroll scroll-container px-[3vw]"
-      onWheel={handleScroll}
-    >
+    <ScrollEffect>
       <ProjectContent
         title="EUNOIA 2024"
         subtext="EVENT WEBSITE WITH INTERACTIVE STICKERS AND ANIMATION"
@@ -63,13 +24,10 @@ export default function Eunoia() {
             ABOUT <br /> THE PROJECT
           </h2>{" "}
           <div className="mr-[10vw]">
-            <div className="pb-[3vh]">
-              <p className="text-blue pb-[1vh]">EXT. LINKS</p>
-              <div className="border-b border-white "></div>
-              <Link href="https://eunoiadesign.ca/ " target="_blank">
-                <p className="pt-[1vh]">visit</p>
-              </Link>
-            </div>
+            <ProjectLink
+              header="EXT. LINKS"
+              component="https://eunoiadesign.ca/"
+            />
             <ProjectTable header="ROLE" component="Web Developer" />{" "}
             <ProjectTable header="TIMELINE" component="8 weeks" />{" "}
             <ProjectTable
@@ -93,6 +51,6 @@ export default function Eunoia() {
           </p>
         </Link>
       </div>
-    </div>
+    </ScrollEffect>
   );
 }

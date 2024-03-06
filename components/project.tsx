@@ -1,5 +1,5 @@
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect, ReactNode } from "react";
 
 type ProjectProps = {
   title?: string;
@@ -77,7 +77,7 @@ export const Project = ({
 
 export const ProjectContent = ({ title, detail, subtext }: ProjectProps) => {
   return (
-    <div className="w-screen relative whitespace-normal shrink-0">
+    <div className="md:w-screen relative whitespace-normal shrink-0">
       <h4 className="text-blue py-[15vh]">{title}</h4>
 
       <h2 className="max-w-[80vw] md:max-w-[50vw] text-[35px] py-[5vh] md:max-w-[70vw] text-base lg:text-[40px] leading-none">
@@ -90,7 +90,7 @@ export const ProjectContent = ({ title, detail, subtext }: ProjectProps) => {
 
 export const ProjectVideo = ({ title, detail }: ProjectProps) => {
   return (
-    <div className=" w-screen relative whitespace-normal shrink-0 flex pt-[5vh] justify-center items-center ">
+    <div className=" md:w-screen relative whitespace-normal shrink-0 flex pt-[5vh] justify-center items-center ">
       <video
         className="h-[80%] w-auto overflow-hidden object-cover border border-[1px] border-brown"
         autoPlay
@@ -106,8 +106,70 @@ export const ProjectVideo = ({ title, detail }: ProjectProps) => {
 
 export const ProjectText = ({ detail }: ProjectProps) => {
   return (
-    <div className="w-[25vw] flex items-center relative whitespace-normal shrink-0">
+    <div className="h-[50vh] md:h-screen md:w-[25vw] flex items-center relative whitespace-normal shrink-0">
       <p>{detail}</p>
+    </div>
+  );
+};
+interface ScrollContainerProps {
+  children: ReactNode;
+}
+export const ScrollEffect: React.FC<ScrollContainerProps> = ({ children }) => {
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    document.body.style.overflowY = getInitialOverflowStyle();
+
+    window.addEventListener("orientationchange", handleOrientationChange);
+
+    return () => {
+      window.removeEventListener("orientationchange", handleOrientationChange);
+    };
+  }, []);
+
+  const getInitialOverflowStyle = () => {
+    return isPortrait() ? "auto" : "hidden";
+  };
+
+  const isPortrait = () => {
+    return window.innerHeight > window.innerWidth;
+  };
+
+  const handleOrientationChange = () => {
+    document.body.style.overflowY = getInitialOverflowStyle();
+  };
+
+  const handleScroll = (e: React.WheelEvent<HTMLDivElement>) => {
+    if (containerRef.current) {
+      const container = containerRef.current;
+      const isScrollable = container.scrollWidth > container.clientWidth;
+
+      if (isScrollable) {
+        container.scrollLeft += e.deltaY;
+        e.preventDefault(); // Prevent vertical scrolling
+      }
+    }
+  };
+  return (
+    <div
+      ref={containerRef}
+      className="md:flex md:flex-row md:h-screen md:overflow-x-scroll scroll-container px-[3vw]"
+      onWheel={handleScroll}
+    >
+      {children}
+    </div>
+  );
+};
+
+export const NextProject = ({ link }: ProjectProps) => {
+  const resolvedLink = link !== undefined ? link : "";
+  return (
+    <div className="md:absolute bottom-0 left-0 w-full border-t border-white bg-navy">
+      <Link href={resolvedLink}>
+        <p className="pt-[1vh] px-2 py-1 px-3 justify-center md:justify-end flex hover:text-blue">
+          next
+        </p>
+      </Link>
     </div>
   );
 };

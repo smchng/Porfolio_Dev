@@ -1,7 +1,12 @@
-import { ProjectContent } from "@/components/project";
+import {
+  ProjectContent,
+  ProjectVideo,
+  ProjectText,
+  NextProject,
+} from "@/components/project";
 import React, { useRef, useState, useEffect } from "react";
 import Link from "next/link";
-import { ProjectTable } from "@/components/table";
+import { ProjectTable, ProjectLink } from "@/components/table";
 
 export default function Recap() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -72,11 +77,19 @@ export default function Recap() {
           </div>
         </div>
       </div>{" "}
-      <div className="absolute bottom-0 left-0 w-full border-t border-white">
-        <Link href="/projects/eunoia">
-          <p className="pt-[1vh] px-2 py-1 px-3 justify-end flex">next</p>
-        </Link>
-      </div>
+      <ProjectVideo title="/video/caseit.webm" detail="video/webm" />
+      <ProjectText detail=" The site serves as an engaging introduction to SFU CaseIT’s international case competition. Featuring the international recognization the organization holds, the organizing commitee's legacy, and what's is offered to those who compete." />
+      <ProjectVideo title="/video/caseit-tour.webm" detail="video/webm" />
+      <ProjectVideo
+        title="/video/caseit-discover.webm"
+        detail="video/webm"
+      />{" "}
+      <ProjectText detail="Introduces the global competitors to Vancouver by introducing them to landmarks and possible attractions they will be exploring" />
+      <ProjectVideo title="/video/caseit-sponsor.webm" detail="video/webm" />
+      <ProjectText detail=" Represents the sponsors of the event that help make the case competition come to life." />
+      <ProjectVideo title="/video/caseit-team.webm" detail="video/webm" />
+      <ProjectText detail="Features the team behind the event that create, organize, and run the case competition" />
+      <NextProject link="/projects/distill" />
     </div>
   );
 }

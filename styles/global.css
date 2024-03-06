@@ -67,3 +67,6 @@ img {
 .scroll-container::-webkit-scrollbar-track {
   background: none; /* No background for the scrollbar track */
 }
+/* * {
+  border: 1px solid red;
+} */
