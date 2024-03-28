@@ -3,9 +3,10 @@ import {
   ProjectVideo,
   ProjectText,
   ScrollEffect,
+  NextProject,
 } from "@/components/project";
 import React, { useRef, useState, useEffect } from "react";
-import Link from "next/link";
+
 import { ProjectTable, ProjectLink } from "@/components/table";
 
 export default function Eunoia() {
@@ -37,20 +38,18 @@ export default function Eunoia() {
           </div>
         </div>
       </div>
+      <ProjectVideo title="/video/eunoia.webm" detail="video/webm" />
+      <ProjectText detail=" Visitors of the site are able to move stickers and interact with the sites features which reflects Eunoia's open-minded and explorative identity " />
       <ProjectVideo title="/video/eunoia-sticker.webm" detail="video/webm" />
-      <ProjectText detail=" Visitor of the site are able to move stickers and interact with the sites features which reflects Eunoia's open-minded and explorative identity " />
-
+      <ProjectText detail="Utilizing motion enhanced the website's user experience, fostering a dynamic and engaging environment that encouraged exploration. Unique interactive elements within the site further heightened this sense of immersion, inviting visitors to delve deeper into its content. " />
+      <ProjectVideo title="/video/eunoia-agenda.webm" detail="video/webm" />{" "}
+      <ProjectText detail="As the main source of information for competitors, the agenda provided clear intructions of what is to be done on each day." />
       <ProjectVideo
         title="/video/eunoia-testimonial.webm"
         detail="video/webm"
-      />
-      <div className="md:absolute bottom-0 left-0 w-full border-t border-white mb-[2vh] sm:m-0">
-        <Link href="/projects/distill">
-          <p className="pt-[1vh] px-2 py-1 px-3 justify-center md:justify-end flex ">
-            next
-          </p>
-        </Link>
-      </div>
+      />{" "}
+      <ProjectText detail=" This was my first project using Tailwind and Next.js. I struggled with learning the syntax and adjusting the absense of using a linked .CSS file with my html. I was able to develop my front-end knowdlege with the help of my team and lead web-developer. I learned to use compoenents in order to make my code more efficient and create flexbible templates." />
+      <NextProject link="/projects/caseit" />
     </ScrollEffect>
   );
 }

@@ -73,7 +73,7 @@ export default function Coffee() {
           </div>
         </div>
       </div>{" "}
-      <NextProject link="/projects/distill" />
+      <NextProject link="/projects/yvr" />
     </div>
   );
 }

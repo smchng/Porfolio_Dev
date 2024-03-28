@@ -86,7 +86,7 @@ export default function Yvr() {
         style={{ width: "auto", height: "80%" }}
       /> */}
       <ProjectText detail="Features the team behind the event that create, organize, and run the case competition" />
-      <NextProject link="/projects/distill" />
+      <NextProject link="/projects/recap" />
     </div>
   );
 }

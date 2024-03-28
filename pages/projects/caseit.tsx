@@ -5,7 +5,6 @@ import {
   NextProject,
 } from "@/components/project";
 import React, { useRef, useState, useEffect } from "react";
-import Link from "next/link";
 import { ProjectTable, ProjectLink } from "@/components/table";
 
 export default function Caseit() {
@@ -81,7 +80,7 @@ export default function Caseit() {
       <ProjectText detail=" Represents the sponsors of the event that help make the case competition come to life." />
       <ProjectVideo title="/video/caseit-team.webm" detail="video/webm" />
       <ProjectText detail="Features the team behind the event that create, organize, and run the case competition" />
-      <NextProject link="/projects/distill" />
+      <NextProject link="/projects/pivot" />
     </div>
   );
 }

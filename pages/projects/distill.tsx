@@ -88,7 +88,7 @@ Created and designed by a team of 4, this website is adapted from a 3D animation
       <ProjectVideo title="/video/distill-checkout.webm" detail="video/webm" />
       <ProjectText detail="Simple and intuitive checkout process with clear points of actions to complete the process quickly and smoothly." />
       <ProjectVideo title="/video/distill-review.webm" detail="video/webm" />
-      <ProjectText detail="Hear from out customers and read their reviews at your own pace." />
+      <ProjectText detail="This project was developed from start to finish. My team created the company through exploration of siphon machines and produced the assets through 3D models. We adapted our concept to this webstite which challenged us to expland our toolsets to make our assets applicable for the website. We took inspiration from https://teenage.engineering/ and https://cowboy.com/ to create the look and feel of our website. We wanted to provide a trustworthy and professional feel to the website to offer customers a VIP experience." />
       <NextProject link="/projects/coffee" />
     </div>
   );

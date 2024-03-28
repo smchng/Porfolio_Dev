@@ -106,7 +106,7 @@ export const ProjectVideo = ({ title, detail }: ProjectProps) => {
 
 export const ProjectText = ({ detail }: ProjectProps) => {
   return (
-    <div className="h-[50vh] md:h-screen md:w-[25vw] flex items-center relative whitespace-normal shrink-0">
+    <div className="h-[50vh] md:h-screen px-[5vw] lg:px-0 sm:w-[50vw] lg:w-[25vw] flex items-center relative whitespace-normal shrink-0">
       <p>{detail}</p>
     </div>
   );
@@ -164,9 +164,9 @@ export const ScrollEffect: React.FC<ScrollContainerProps> = ({ children }) => {
 export const NextProject = ({ link }: ProjectProps) => {
   const resolvedLink = link !== undefined ? link : "";
   return (
-    <div className="md:absolute bottom-0 left-0 w-full border-t border-white bg-navy">
+    <div className="md:absolute bottom-0 left-0 w-full border-t border-white mb-[2vh] sm:m-0">
       <Link href={resolvedLink}>
-        <p className="pt-[1vh] px-2 py-1 px-3 justify-center md:justify-end flex hover:text-blue">
+        <p className="pt-[1vh] px-2 py-1 px-3 justify-center md:justify-end flex ">
           next
         </p>
       </Link>
