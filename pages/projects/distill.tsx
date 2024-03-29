@@ -2,55 +2,16 @@ import {
   ProjectContent,
   ProjectVideo,
   ProjectText,
+  ScrollEffect,
   NextProject,
 } from "@/components/project";
 import React, { useRef, useState, useEffect } from "react";
-import Link from "next/link";
+
 import { ProjectTable, ProjectLink } from "@/components/table";
 
 export default function Distill() {
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    document.body.style.overflowY = getInitialOverflowStyle();
-
-    window.addEventListener("orientationchange", handleOrientationChange);
-
-    return () => {
-      window.removeEventListener("orientationchange", handleOrientationChange);
-    };
-  }, []);
-
-  const getInitialOverflowStyle = () => {
-    return isPortrait() ? "auto" : "hidden";
-  };
-
-  const isPortrait = () => {
-    return window.innerHeight > window.innerWidth;
-  };
-
-  const handleOrientationChange = () => {
-    document.body.style.overflowY = getInitialOverflowStyle();
-  };
-
-  const handleScroll = (e: React.WheelEvent<HTMLDivElement>) => {
-    if (containerRef.current) {
-      const container = containerRef.current;
-      const isScrollable = container.scrollWidth > container.clientWidth;
-
-      if (isScrollable) {
-        container.scrollLeft += e.deltaY;
-        e.preventDefault(); // Prevent vertical scrolling
-      }
-    }
-  };
-
   return (
-    <div
-      ref={containerRef}
-      className="md:flex md:flex-row md:h-screen md:overflow-x-scroll scroll-container px-[3vw]"
-      onWheel={handleScroll}
-    >
+    <ScrollEffect>
       <ProjectContent
         title="DISTILL BREW"
         subtext="E-COMMERCE WEBSITE FOR COFFEE APPLIANCES"
@@ -90,6 +51,6 @@ Created and designed by a team of 4, this website is adapted from a 3D animation
       <ProjectVideo title="/video/distill-review.webm" detail="video/webm" />
       <ProjectText detail="This project was developed from start to finish. My team created the company through exploration of siphon machines and produced the assets through 3D models. We adapted our concept to this webstite which challenged us to expland our toolsets to make our assets applicable for the website. We took inspiration from https://teenage.engineering/ and https://cowboy.com/ to create the look and feel of our website. We wanted to provide a trustworthy and professional feel to the website to offer customers a VIP experience." />
       <NextProject link="/projects/coffee" />
-    </div>
+    </ScrollEffect>
   );
 }

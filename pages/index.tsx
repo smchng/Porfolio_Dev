@@ -125,7 +125,7 @@ export default function Home() {
           setProjectSize("max-h-[40vh]");
           setFilterSize("my-[5vh]");
         } else {
-          setProjectSize("max-h-[65vh]");
+          setProjectSize("max-h-[70vh]");
           setFilterSize("mb-[1vh]");
         }
       }
@@ -215,7 +215,7 @@ export default function Home() {
                 />
               ))}
             </div>
-            {/* <div className="absolute bottom-0 bg-gradient-to-b from-transparent to-navy w-full h-[4vw] z-10"></div> */}
+            <div className="absolute bottom-0 bg-gradient-to-b from-transparent to-navy w-full h-[4vw] z-10"></div>
           </div>
         </div>
       </div>

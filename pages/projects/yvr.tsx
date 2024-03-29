@@ -2,55 +2,16 @@ import {
   ProjectContent,
   ProjectVideo,
   ProjectText,
+  ScrollEffect,
   NextProject,
 } from "@/components/project";
 import React, { useRef, useState, useEffect } from "react";
-import Image from "next/image";
+
 import { ProjectTable, ProjectLink } from "@/components/table";
 
 export default function Yvr() {
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    document.body.style.overflowY = getInitialOverflowStyle();
-
-    window.addEventListener("orientationchange", handleOrientationChange);
-
-    return () => {
-      window.removeEventListener("orientationchange", handleOrientationChange);
-    };
-  }, []);
-
-  const getInitialOverflowStyle = () => {
-    return isPortrait() ? "auto" : "hidden";
-  };
-
-  const isPortrait = () => {
-    return window.innerHeight > window.innerWidth;
-  };
-
-  const handleOrientationChange = () => {
-    document.body.style.overflowY = getInitialOverflowStyle();
-  };
-
-  const handleScroll = (e: React.WheelEvent<HTMLDivElement>) => {
-    if (containerRef.current) {
-      const container = containerRef.current;
-      const isScrollable = container.scrollWidth > container.clientWidth;
-
-      if (isScrollable) {
-        container.scrollLeft += e.deltaY;
-        e.preventDefault(); // Prevent vertical scrolling
-      }
-    }
-  };
-
   return (
-    <div
-      ref={containerRef}
-      className="md:flex md:flex-row md:h-screen md:overflow-x-scroll scroll-container px-[3vw]"
-      // onWheel={handleScroll}
-    >
+    <ScrollEffect>
       <ProjectContent
         title="YVR KIOSK"
         subtext="FLIGHT INFORMATION DISPLAY AT YVR"
@@ -87,6 +48,6 @@ export default function Yvr() {
       /> */}
       <ProjectText detail="Features the team behind the event that create, organize, and run the case competition" />
       <NextProject link="/projects/recap" />
-    </div>
+    </ScrollEffect>
   );
 }

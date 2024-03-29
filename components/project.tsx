@@ -106,11 +106,12 @@ export const ProjectVideo = ({ title, detail }: ProjectProps) => {
 
 export const ProjectText = ({ detail }: ProjectProps) => {
   return (
-    <div className="h-[50vh] md:h-screen px-[5vw] lg:px-0 sm:w-[50vw] lg:w-[25vw] flex items-center relative whitespace-normal shrink-0">
+    <div className="h-[50vh] md:h-screen px-[5vw] lg:px-[5vw] sm:w-[50vw] md:w-[50vw] lg:w-[35vw] flex items-center relative whitespace-normal shrink-0">
       <p>{detail}</p>
     </div>
   );
 };
+
 interface ScrollContainerProps {
   children: ReactNode;
 }
@@ -118,12 +119,14 @@ export const ScrollEffect: React.FC<ScrollContainerProps> = ({ children }) => {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    document.body.style.overflowY = getInitialOverflowStyle();
+    const initialOverflowStyle = getInitialOverflowStyle();
+    document.body.style.overflowY = initialOverflowStyle;
 
     window.addEventListener("orientationchange", handleOrientationChange);
 
     return () => {
       window.removeEventListener("orientationchange", handleOrientationChange);
+      document.body.style.overflowY = "auto"; // Re-enable scrolling when component unmounts
     };
   }, []);
 
@@ -147,13 +150,16 @@ export const ScrollEffect: React.FC<ScrollContainerProps> = ({ children }) => {
       if (isScrollable) {
         container.scrollLeft += e.deltaY;
         e.preventDefault(); // Prevent vertical scrolling
+
+        // Also, prevent the default action for the wheel event
+        e.stopPropagation();
       }
     }
   };
   return (
     <div
       ref={containerRef}
-      className="md:flex md:flex-row md:h-screen md:overflow-x-scroll scroll-container px-[3vw]"
+      className="md:flex md:flex-row  md:overflow-x-scroll scroll-container px-[3vw]"
       onWheel={handleScroll}
     >
       {children}

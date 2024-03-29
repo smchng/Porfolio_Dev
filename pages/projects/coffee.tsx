@@ -2,54 +2,16 @@ import {
   ProjectContent,
   ProjectVideo,
   ProjectText,
+  ScrollEffect,
   NextProject,
 } from "@/components/project";
 import React, { useRef, useState, useEffect } from "react";
-import Link from "next/link";
+
 import { ProjectTable, ProjectLink } from "@/components/table";
 
 export default function Coffee() {
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    document.body.style.overflowY = getInitialOverflowStyle();
-
-    window.addEventListener("orientationchange", handleOrientationChange);
-
-    return () => {
-      window.removeEventListener("orientationchange", handleOrientationChange);
-    };
-  }, []);
-
-  const getInitialOverflowStyle = () => {
-    return isPortrait() ? "auto" : "hidden";
-  };
-
-  const isPortrait = () => {
-    return window.innerHeight > window.innerWidth;
-  };
-
-  const handleOrientationChange = () => {
-    document.body.style.overflowY = getInitialOverflowStyle();
-  };
-
-  const handleScroll = (e: React.WheelEvent<HTMLDivElement>) => {
-    if (containerRef.current) {
-      const container = containerRef.current;
-      const isScrollable = container.scrollWidth > container.clientWidth;
-
-      if (isScrollable) {
-        container.scrollLeft += e.deltaY;
-        e.preventDefault(); // Prevent vertical scrolling
-      }
-    }
-  };
-
   return (
-    <div
-      ref={containerRef}
-      className="md:flex md:flex-row md:h-screen md:overflow-x-scroll scroll-container px-[3vw]"
-    >
+    <ScrollEffect>
       <ProjectContent
         title="COFFEE BEAN ANALYSIS"
         subtext="ANALYZING TRENDS AND VALUE OF COFFEE BEANS AROUND THE WORLD"
@@ -74,6 +36,6 @@ export default function Coffee() {
         </div>
       </div>{" "}
       <NextProject link="/projects/yvr" />
-    </div>
+    </ScrollEffect>
   );
 }
