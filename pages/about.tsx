@@ -151,7 +151,7 @@ export default function About() {
             <Link href={item.link} key={index} target="_blank">
               <p className="text-white text-[10px] md:text-[11px] ">
                 {item.text}
-                {index !== NavItems.slice(2, 6).length - 1 && (
+                {index !== NavItems.length - 1 && (
                   <span className="pl-[3vw]">/</span>
                 )}
               </p>
