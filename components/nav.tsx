@@ -67,7 +67,7 @@ const MobileNav: React.FC<MobilePageProps> = ({ onClose }) => {
     onClose(); // Notify the parent component to close the menu page
   };
   return (
-    <div className="h-screen bg-navy justify-end flex flex-col ">
+    <div className="h-screen w-screen absolute bg-navy justify-end flex flex-col ">
       <div className="p-5">
         <div className="pb-[5vh]">
           <Link href="/" onClick={handleOverlayClick}>
