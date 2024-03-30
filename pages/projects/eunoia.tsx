@@ -17,7 +17,7 @@ export default function Eunoia() {
         subtext="EVENT WEBSITE WITH INTERACTIVE STICKERS AND ANIMATION"
         detail="Developed the website for SFU Eunoia’s 2024 design Jam that featured events schedule, sponsors, and legacy. The site includes interactive stickers representing key aspects of the event and featuring sponsors, serving as the central hub for essential information on schedule and activities. The event represents the transformation of an idea to real-life through collaboration and unrestricted exploration."
       />
-      <div className="w-screen relative whitespace-normal shrink-0">
+      <div className="md:w-screen relative whitespace-normal shrink-0">
         {" "}
         {/* <h4 className="text-blue py-[15vh]">EUNOIA 2024</h4> */}
         <div className="md:grid md:grid-cols-2 pt-[25vh]">
