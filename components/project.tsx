@@ -92,7 +92,7 @@ export const ProjectVideo = ({ title, detail }: ProjectProps) => {
   return (
     <div className=" md:w-screen relative whitespace-normal shrink-0 flex pt-[5vh] justify-center items-center ">
       <video
-        className="h-[80%] w-auto overflow-hidden object-cover border border-[1px] border-brown"
+        className="h-[80vh] w-auto overflow-hidden object-cover border border-[1px] border-brown"
         autoPlay
         muted
         loop
