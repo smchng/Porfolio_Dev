@@ -78,7 +78,7 @@ const MobileNav: React.FC<MobilePageProps> = ({ onClose }) => {
             <h2>About</h2>
           </Link>
         </div>
-        <div className="flex space-x-[3vw] w-full">
+        <div className="flex space-x-[3vw] w-full pb-[5vh]">
           {NavItems.slice(2, 6).map((item, index) => (
             <Link href={item.link} key={index} target="_blank">
               <p className="text-white  text-[10px] md:text-[11px] ">
@@ -112,7 +112,7 @@ const Nav = () => {
   const isMobile = typeof window !== "undefined" && window.innerWidth < 500;
 
   return (
-    <div className="fixed z-10 h-screen bg-grey">
+    <div className="fixed z-10 h-screen bg-grey ">
       {isMobile ? (
         <>
           {isHomePageVisible && (
@@ -120,11 +120,15 @@ const Nav = () => {
           )}
 
           <div
-            className="w-screen backdrop-blur-lg bg-navy opacity-75"
+            className="w-screen bottom-0 flex flex-col justify-end h-screen "
             onClick={handleToggleOverlay}
           >
-            <p className="py-1 justify-center flex ">menu</p>
-            <div className="md:absolute bottom-0 left-0 w-full border-t border-white mb-[2vh] sm:m-0"></div>
+            <div className="backdrop-blur-lg bg-navy opacity-75">
+              <div className="md:absolute bottom-0 left-0 w-full border-t border-white mb-[2vh] sm:m-0"></div>
+              <p className="py-1 justify-center items-end flex ">
+                {isHomePageVisible ? "back" : "menu"}
+              </p>
+            </div>
           </div>
         </>
       ) : (
