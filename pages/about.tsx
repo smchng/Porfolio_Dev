@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { SkillTable, ExpTable } from "@/components/table";
 import { TitleButton } from "@/components/button";
 import { TypingEllipsis } from "@/components/dots";
@@ -75,6 +76,26 @@ export default function About() {
     },
   ];
 
+  const NavItems = [
+    {
+      link: "/files/resume.pdf",
+      text: "RESUME",
+    },
+    {
+      link: "https://www.linkedin.com/in/samantha-chung-76a0961bb/",
+      text: "LINKEDIN",
+    },
+
+    {
+      link: "https://github.com/smchng",
+      text: "GITHUB",
+    },
+    {
+      link: "mailto:s.chng02@gmail.prettierrc.js.com",
+      text: "EMAIL",
+    },
+  ];
+
   return (
     <div className="px-[3vw]">
       <div className="md:h-screen pt-[20vh]">
@@ -118,13 +139,25 @@ export default function About() {
         <ExpTable header="CURRENTLY" list={curItems} />
         <ExpTable header="PREVIOUSLY" list={preItems} />
       </div>
-      <div className="h-screen flex justify-center items-center">
-        <h1 className="max-w-[80vw text-center text-base sm:text-lg">
+      <div className="h-screen flex flex-col justify-center items-center">
+        <h1 className="flex max-w-[80vw] text-center text-base sm:text-lg pb-[8vh]">
           LET'S WORK TOGETHER
-        </h1>
-        {/* <div className="flex items-end">
-          <TypingEllipsis />
-        </div> */}
+          {/* <div className="flex items-end">
+            <TypingEllipsis />
+          </div> */}
+        </h1>{" "}
+        <div className="sm:hidden flex space-x-[3vw] justify-center w-full">
+          {NavItems.map((item, index) => (
+            <Link href={item.link} key={index} target="_blank">
+              <p className="text-white text-[10px] md:text-[11px] ">
+                {item.text}
+                {index !== NavItems.slice(2, 6).length - 1 && (
+                  <span className="pl-[3vw]">/</span>
+                )}
+              </p>
+            </Link>
+          ))}
+        </div>
       </div>
     </div>
   );
