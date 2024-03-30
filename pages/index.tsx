@@ -148,7 +148,8 @@ export default function Home() {
   const handleProjectHover = (index: number) => {
     setHoveredProject(index);
   };
-
+  const isSmallViewport =
+    typeof window !== "undefined" && window.innerWidth < 500;
   return (
     <div>
       <div className="p-[2vw] h-screen flex flex-col sm:flex-row justify-center md:justify-start text-center md:text-left">
@@ -171,7 +172,11 @@ export default function Home() {
         <Image
           src={hoveredProject !== null ? ProjectItems[hoveredProject].img : img}
           alt="project title card"
-          style={{ height: "80vh", width: "100%" }}
+          style={{
+            height: isSmallViewport ? "40vh" : "80vh",
+            width: "100%",
+            maxWidth: isSmallViewport ? "500px" : "100%",
+          }}
           className={"max-h-[80vh] 2xl:max-h-[70vh] align-center object-cover "}
         ></Image>
         <div>

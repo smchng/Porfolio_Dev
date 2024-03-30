@@ -119,13 +119,13 @@ const Nav = () => {
             <MobileNav onClose={() => setHomePageVisibility(false)} />
           )}
 
-          <div
-            className="w-screen bottom-0 flex flex-col justify-end h-screen "
-            onClick={handleToggleOverlay}
-          >
+          <div className="fixed bottom-0 left-0 right-0">
             <div className="backdrop-blur-lg bg-navy opacity-75">
               <div className="md:absolute bottom-0 left-0 w-full border-t border-white mb-[2vh] sm:m-0"></div>
-              <p className="py-1 justify-center items-end flex ">
+              <p
+                className="py-1 justify-center items-end flex "
+                onClick={handleToggleOverlay}
+              >
                 {isHomePageVisible ? "back" : "menu"}
               </p>
             </div>
