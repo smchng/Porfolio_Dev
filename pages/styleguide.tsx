@@ -192,6 +192,10 @@ export default function Styleguide() {
             name="Images"
             selector="Image"
             code={`
+            img {
+  border: 1px solid #ffffff;
+  padding: 5px;
+} 
              <Image
               src={eunoia}
               alt="project title card"
