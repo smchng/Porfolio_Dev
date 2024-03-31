@@ -27,7 +27,15 @@ const StyleObject = ({ name, selector, code }: StyleProps) => {
 export default function Styleguide() {
   return (
     <div className="p-[3vw]">
-      <h1 className="my-[10vh]">STYLEGUIDE</h1>
+      <h1 className="mt-[10vh]">STYLEGUIDE</h1>
+      <div className="my-[10vh]">
+        <Link href="projects/eunoia">
+          <h3>Project Analysis 1 - Eunoia Design Jam</h3>
+        </Link>
+        <Link href="projects/caseit">
+          <h3>Project Analysis 2 - CaseIt 2024</h3>
+        </Link>
+      </div>
 
       <div>
         {" "}
