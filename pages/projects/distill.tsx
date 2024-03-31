@@ -6,7 +6,7 @@ import {
   NextProject,
 } from "@/components/project";
 import React, { useRef, useState, useEffect } from "react";
-
+import Link from "next/link";
 import { ProjectTable, ProjectLink } from "@/components/table";
 
 export default function Distill() {
@@ -49,7 +49,34 @@ Created and designed by a team of 4, this website is adapted from a 3D animation
       <ProjectVideo title="/video/distill-checkout.webm" detail="video/webm" />
       <ProjectText detail="Simple and intuitive checkout process with clear points of actions to complete the process quickly and smoothly." />
       <ProjectVideo title="/video/distill-review.webm" detail="video/webm" />
-      <ProjectText detail="This project was developed from start to finish. My team created the company through exploration of siphon machines and produced the assets through 3D models. We adapted our concept to this webstite which challenged us to expland our toolsets to make our assets applicable for the website. We took inspiration from https://teenage.engineering/ and https://cowboy.com/ to create the look and feel of our website. We wanted to provide a trustworthy and professional feel to the website to offer customers a VIP experience." />
+      <div className="h-[50vh] md:h-screen px-[5vw] lg:px-[5vw] sm:w-[50vw] md:w-[50vw] lg:w-[35vw] flex items-center relative whitespace-normal shrink-0">
+        <p>
+          {" "}
+          This project was developed from start to finish. My team created the
+          company through exploration of siphon machines and produced the assets
+          through 3D models. We adapted our concept to this website which
+          challenged us to expand our toolsets to make our assets applicable for
+          the website. We took inspiration from{" "}
+          <Link
+            href="https://teenage.engineering/"
+            target="_blank"
+            className="hover:text-white text-blue"
+          >
+            teenage.engineering
+          </Link>{" "}
+          and{" "}
+          <Link
+            href="https://cowboy.com/"
+            target="_blank"
+            className="hover:text-white text-blue"
+          >
+            cowboy.com
+          </Link>{" "}
+          to create the look and feel of our website. We wanted to provide a
+          trustworthy and professional feel to the website to offer customers a
+          VIP experience.
+        </p>
+      </div>
       <NextProject link="/projects/coffee" />
     </ScrollEffect>
   );

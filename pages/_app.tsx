@@ -14,6 +14,7 @@ import Distill from "@/pages/projects/distill";
 import Coffee from "@/pages/projects/coffee";
 import YVR from "@/pages/projects/yvr";
 import Recap from "@/pages/projects/recap";
+import Styleguide from "@/pages/styleguide";
 
 import Head from "next/head";
 
@@ -56,6 +57,7 @@ export default function App() {
           {currentPage === "/projects/distill" && <Distill />}
           {currentPage === "/projects/yvr" && <YVR />}
           {currentPage === "/projects/recap" && <Recap />}
+          {currentPage === "/styleguide" && <Styleguide />}
         </section>
         <section className=" px-[1vw]">
           <Footer />
