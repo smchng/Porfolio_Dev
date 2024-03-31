@@ -30,10 +30,10 @@ export default function Styleguide() {
       <h1 className="mt-[10vh]">STYLEGUIDE</h1>
       <div className="my-[10vh]">
         <Link href="projects/eunoia">
-          <h3>Project Analysis 1 - Eunoia Design Jam</h3>
+          <h3>Process Analysis 1 - Eunoia Design Jam</h3>
         </Link>
         <Link href="projects/caseit">
-          <h3>Project Analysis 2 - CaseIt 2024</h3>
+          <h3>Process Analysis 2 - CaseIt 2024</h3>
         </Link>
       </div>
 
