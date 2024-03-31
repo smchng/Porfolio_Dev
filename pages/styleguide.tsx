@@ -35,11 +35,17 @@ export default function Styleguide() {
         <Link href="projects/caseit">
           <h3>Process Analysis 2 - CaseIt 2024</h3>
         </Link>
+        <Link href="#bio">
+          <h3>Bio</h3>
+        </Link>
+        <Link href="#citation">
+          <h3>Citations</h3>
+        </Link>
       </div>
 
       <div>
         {" "}
-        <h3>Bio</h3>
+        <h3 id="bio">Bio</h3>
         <div className="w-full border-t border-white my-[5vh]"></div>
         <p className="md:max-w-[50vw]">
           I collaborate with talented designers to bring their visions to life,
@@ -254,6 +260,27 @@ export default function Styleguide() {
             </div>
           </div>
         </div>
+        <h3 id="citation">Citation</h3>
+        <div className="w-full border-t border-white my-[5vh]"></div>
+        <p>
+          Font-Kai. Designer. 2011. Kaisei HarunoUmi [Font].{" "}
+          <strong>
+            Retrieved from
+            https://fonts.google.com/specimen/Kaisei+HarunoUmi/about?query=kaisei
+          </strong>
+        </p>{" "}
+        <p>
+          CaseIt Design Team. 2023.
+          <strong>CaseIt Cover</strong>
+        </p>
+        <p>
+          PIVOT Design Team. 2023.
+          <strong>Pivot Cover</strong>
+        </p>
+        <p>
+          Eunoia Design Team. 2023.
+          <strong>Eunoia Cover</strong>
+        </p>
       </div>
     </div>
   );
