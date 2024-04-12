@@ -32,19 +32,39 @@ export default function Caseit() {
           </div>
         </div>
       </div>{" "}
+      <ProjectText
+        title="About the site"
+        detail=" The site serves as an engaging introduction to SFU CaseIT’s international case competition. Featuring the international recognization the organization holds, the organizing commitee's legacy, and what's is offered to those who compete."
+      />
       <ProjectVideo title="/video/caseit.webm" detail="video/webm" />
-      <ProjectText detail=" The site serves as an engaging introduction to SFU CaseIT’s international case competition. Featuring the international recognization the organization holds, the organizing commitee's legacy, and what's is offered to those who compete." />
-      <ProjectVideo title="/video/caseit-tour.webm" detail="video/webm" />
-      <ProjectVideo
-        title="/video/caseit-discover.webm"
-        detail="video/webm"
+      <ProjectText
+        title="Working in a team"
+        detail="When working off an existing project, I efficiently locate necessary files and components, streamlining the development process. Leveraging Git, I create a structured project environment, enabling seamless collaboration and version control among team members."
+      />
+      <ProjectVideo title="/video/caseit-code.webm" detail="video/webm" />
+      <ProjectText
+        title="Following branding"
+        detail="In adhering to established brand identities, I applied specified colors and accurately placed content as outlined by the designer's vision. This ensures seamless integration of design elements, maintaining brand consistency across all platforms and materials."
       />{" "}
-      <ProjectText detail="Introduces the global competitors to Vancouver by introducing them to landmarks and possible attractions they will be exploring" />
-      <ProjectVideo title="/video/caseit-sponsor.webm" detail="video/webm" />
-      <ProjectText detail=" Represents the sponsors of the event that help make the case competition come to life." />
+      <ProjectVideo
+        title="/video/caseit-tours-figma.webm"
+        detail="video/webm"
+      />
+      <ProjectVideo title="/video/caseit-tour.webm" detail="video/webm" />
+      <ProjectText
+        title="Other features"
+        detail="To uphold the professionalism of CaseIt while encouraging participation, the site prominently showcases the individuals behind the scenes, such as sponsors and the organizing committee. By highlighting their contributions, we convey CaseIt's commitment to recognizing and fostering talent, thereby encouraging others to join and contribute to our esteemed establishment."
+      />
+      <ProjectVideo title="/video/caseit-discover.webm" detail="video/webm" />{" "}
+      {/* <ProjectText detail=" Represents the sponsors of the event that help make the case competition come to life." />{" "} */}
+      <ProjectVideo title="/video/caseit-sponsor.webm" detail="video/webm" />{" "}
+      {/* <ProjectText detail="Features the team behind the event that create, organize, and run the case competition" /> */}
       <ProjectVideo title="/video/caseit-team.webm" detail="video/webm" />
-      <ProjectText detail="Features the team behind the event that create, organize, and run the case competition" />
-      <NextProject link="/projects/pivot" />
+      <ProjectText
+        title="Reflection"
+        detail="Working off a preexisting project taught me the importance of familiarizing myself with the established file structure, enabling seamless integration and collaboration. Challenging myself to recreate the designer's vision enhanced my skills while navigating pull requests and Git workflows provided invaluable insights into efficient project management and version control."
+      />
+      {/* <NextProject link="/projects/pivot" /> */}
     </ScrollEffect>
   );
 }
