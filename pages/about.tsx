@@ -4,6 +4,7 @@ import Link from "next/link";
 import { SkillTable, ExpTable } from "@/components/table";
 import { TitleButton } from "@/components/button";
 import { TypingEllipsis } from "@/components/dots";
+import { HoverImg } from "@/components/hover";
 
 export default function About() {
   const skillItems = [
@@ -101,16 +102,19 @@ export default function About() {
       <div className="md:h-screen pt-[20vh]">
         <h3>HELLO</h3>
         <p className="py-[15vh] md:max-w-[50vw]">
-          I collaborate with talented designers to bring their visions to life,
-          aiming to elevate digital platforms through thoughtful designs and
-          engaging visuals. I prioritize exploration for creative possibilities,
-          value teamwork for maximizing project potential, and employ organized
-          workflows and clear deadlines to see projects through from start to
-          finish. I am dedicated to exploring innovative solutions and
-          optimizing efficiency in every project I undertake. With a diverse
-          background collaborating with school clubs, startups, and established
-          companies, I consistently contribute my skills to achieve their goals
-          and drive success.{" "}
+          <HoverImg
+            img="/imgs/me.jpg"
+            displayText="I collaborate with
+          talented designers to bring their visions to life, aiming to elevate
+          digital platforms through thoughtful designs and engaging visuals. I
+          prioritize exploration for creative possibilities, value teamwork for
+          maximizing project potential, and employ organized workflows and clear
+          deadlines to see projects through from start to finish. I am dedicated
+          to exploring innovative solutions and optimizing efficiency in every
+          project I undertake. With a diverse background collaborating with
+          school clubs, startups, and established companies, I consistently
+          contribute my skills to achieve their goals and drive success."
+          />{" "}
           <strong>Let's bring fresh ideas to life together.</strong>
         </p>
         <div className="grid md:grid-cols-2 gap-5 ">

@@ -113,7 +113,7 @@ export const ProjectVideo = ({ title, detail }: ProjectProps) => {
 
 export const ProjectText = ({ detail, title }: ProjectProps) => {
   return (
-    <div className="h-[50vh] md:h-screen px-[5vw] lg:px-[3vw] sm:w-[50vw] md:w-[50vw] lg:w-[40vw] flex flex-col justify-center  relative whitespace-normal shrink-0">
+    <div className="h-[50vh] md:h-screen px-[5vw] lg:px-[3vw] sm:w-[100%] md:w-[50vw] lg:w-[40vw] flex flex-col justify-center  relative whitespace-normal shrink-0">
       <p className="text-[15px]">
         <strong>{title}</strong>
       </p>
