@@ -1,5 +1,11 @@
 import Link from "next/link";
-import React, { useState, useRef, useEffect, ReactNode } from "react";
+import React, {
+  useState,
+  useRef,
+  useEffect,
+  ReactNode,
+  RefObject,
+} from "react";
 
 type ProjectProps = {
   title?: string;
@@ -11,6 +17,8 @@ type ProjectProps = {
   subtext?: string;
   onMouseOver?: () => void;
   hovered?: boolean;
+  ref?: RefObject<HTMLDivElement> | undefined;
+  nextSectionRef?: RefObject<HTMLDivElement> | undefined;
 };
 
 export const Project = ({
@@ -88,10 +96,13 @@ export const ProjectContent = ({ title, detail, subtext }: ProjectProps) => {
   );
 };
 
-export const ProjectVideo = ({ title, detail }: ProjectProps) => {
+export const ProjectVideo = ({ title, detail, ref }: ProjectProps) => {
+  const videoRef = useRef<HTMLVideoElement | null>(null);
+
   return (
     <div className=" md:w-screen relative whitespace-normal shrink-0 flex pt-[5vh] justify-center items-center ">
       <video
+        ref={videoRef}
         className="h-[80vh] w-auto overflow-hidden object-cover border border-[1px] border-brown"
         autoPlay
         muted
@@ -104,9 +115,17 @@ export const ProjectVideo = ({ title, detail }: ProjectProps) => {
   );
 };
 
-export const ProjectText = ({ detail }: ProjectProps) => {
+export const ProjectText = ({ detail, ref, title }: ProjectProps) => {
+  const textRef = useRef(null);
+
   return (
-    <div className="h-[50vh] md:h-screen px-[5vw] lg:px-[5vw] sm:w-[50vw] md:w-[50vw] lg:w-[35vw] flex items-center relative whitespace-normal shrink-0">
+    <div
+      ref={textRef}
+      className="h-[50vh] md:h-screen px-[5vw] lg:px-[3vw] sm:w-[50vw] md:w-[50vw] lg:w-[40vw] flex flex-col justify-center  relative whitespace-normal shrink-0"
+    >
+      <p className="text-[15px]">
+        <strong>{title}</strong>
+      </p>
       <p>{detail}</p>
     </div>
   );
@@ -176,6 +195,23 @@ export const NextProject = ({ link }: ProjectProps) => {
           next
         </p>
       </Link>
+    </div>
+  );
+};
+
+export const ScrollRight = ({ nextSectionRef }: ProjectProps) => {
+  const handleClick = () => {
+    if (nextSectionRef && nextSectionRef.current) {
+      nextSectionRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  return (
+    <div
+      className="md:absolute bottom-0 right-0 w-full cursor-pointer"
+      onClick={handleClick}
+    >
+      <p className="pt-[1vh] px-2 py-1 px-3 text-blue">scroll</p>
     </div>
   );
 };
