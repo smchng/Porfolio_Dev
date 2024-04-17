@@ -90,7 +90,7 @@ export const ProjectContent = ({ title, detail, subtext }: ProjectProps) => {
         {subtext}
       </h2>
       <p className="max-w-[80vw] md:max-w-[50vw]">{detail}</p>
-      <p className="text-blue py-[5vh]">scroll →</p>
+      <p className="text-blue py-[5vh] hidden md:inline">scroll →</p>
     </div>
   );
 };
@@ -99,7 +99,7 @@ export const ProjectVideo = ({ title, detail }: ProjectProps) => {
   return (
     <div className=" md:w-screen relative whitespace-normal shrink-0 flex pt-[5vh] justify-center items-center ">
       <video
-        className="h-[80vh] w-auto overflow-hidden object-cover border border-[1px] border-brown"
+        className="h-auto w-[90vw] md:h-[80vh] md:w-auto overflow-hidden object-cover border border-[1px] border-brown"
         autoPlay
         muted
         loop
