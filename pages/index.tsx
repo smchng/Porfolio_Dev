@@ -14,7 +14,7 @@ import pivot from "@/public/imgs/pivot.webp";
 
 export default function Home() {
   const [selectedTag, setSelectedTag] = useState("");
-  // const uniqueTags = Array.from(new Set(["dev", "research"]));
+  const uniqueTags = Array.from(new Set(["dev", "research"]));
   const ProjectItems = [
     {
       title: "WEB DEVELOPER",
@@ -180,7 +180,7 @@ export default function Home() {
           className={"max-h-[80vh] 2xl:max-h-[70vh] align-center object-cover "}
         ></Image>
         <div>
-          {/* <div
+          <div
             className={`${filterSize} md:pb-[1vh] pt-[1vh] flex space-x-2 text-blue cursor-pointer`}
           >
             <p
@@ -203,7 +203,7 @@ export default function Home() {
                 )}
               </React.Fragment>
             ))}
-          </div> */}
+          </div>
           <div className="relative flex flex-col overflow-hidden ">
             {/* <div className="absolute top-0 bg-gradient-to-t from-transparent to-navy w-full h-[4vw] z-10"></div> */}
             <div className={`overflow-y-auto scroll-container  ${projectSize}`}>
