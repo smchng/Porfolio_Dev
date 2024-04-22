@@ -68,7 +68,7 @@ export default function Caseit() {
         title="Reflection"
         detail="Working off a preexisting project taught me the importance of familiarizing myself with the established file structure, enabling seamless integration and collaboration. Challenging myself to recreate the designer's vision enhanced my skills while navigating pull requests and Git workflows provided invaluable insights into efficient project management and version control."
       />
-      <NextProject link="/projects/pivot" />
+      <NextProject link="/projects/yvr" />
     </ScrollEffect>
   );
 }

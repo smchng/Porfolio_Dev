@@ -35,6 +35,15 @@ export default function Home() {
       img: caseit,
     },
     {
+      title: "UX/UI RESEARCHER",
+      group: "YVR KIOSK",
+      link: "",
+      skill: "figma, user reserch",
+      page: "/projects/yvr",
+      tag: "research",
+      img: yvr,
+    },
+    {
       title: "WEB DEVELOPER",
       group: "PIVOT",
       link: "https://pivot.caseit.org/",
@@ -61,15 +70,7 @@ export default function Home() {
     //   tag: "research",
     //   img: coffee,
     // },
-    {
-      title: "UX/UI RESEARCHER",
-      group: "YVR KIOSK",
-      link: "",
-      skill: "figma, user reserch",
-      page: "/projects/yvr",
-      tag: "research",
-      img: yvr,
-    },
+
     // {
     //   title: "DEVELOPER",
     //   group: "RECAP",

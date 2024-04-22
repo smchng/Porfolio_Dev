@@ -81,7 +81,7 @@ Digital touchscreen format enables interface interactions, while prolonging prod
         title="Takeaway"
         detail="Working in a team to develop this project was an enlightening experience that underscored the importance of communication and collaboration. Through numerous interviews and iterative cycles of solution development, we navigated various challenges and refined our approach to arrive at the final prototype. These interactions not only fostered a deeper understanding of the problem space but also highlighted the significance of open dialogue and receptivity to feedback within a team setting. Ultimately, this journey taught us that effective teamwork is not merely about individual contributions but rather the collective effort towards a shared goal, where each iteration and exchange serves as a stepping stone towards innovation and excellence."
       />
-      {/* <NextProject link="/projects/recap" /> */}
+      <NextProject link="/projects/pivot" />
     </ScrollEffect>
   );
 }
