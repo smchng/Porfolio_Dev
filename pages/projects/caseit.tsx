@@ -25,7 +25,11 @@ export default function Caseit() {
             ABOUT <br /> THE PROJECT
           </h2>{" "}
           <div className="mr-[10vw]">
-            <ProjectLink header="EXT. LINKS" component="https://caseit.org" />
+            <ProjectLink
+              header="EXT. LINKS"
+              title="visit"
+              component="https://caseit.org"
+            />
             <ProjectTable header="ROLE" component="Web Developer" />{" "}
             <ProjectTable header="TIMELINE" component="5 months" />{" "}
             <ProjectTable header="TOOLS" component="HTML, CSS, JS" />
@@ -64,7 +68,7 @@ export default function Caseit() {
         title="Reflection"
         detail="Working off a preexisting project taught me the importance of familiarizing myself with the established file structure, enabling seamless integration and collaboration. Challenging myself to recreate the designer's vision enhanced my skills while navigating pull requests and Git workflows provided invaluable insights into efficient project management and version control."
       />
-      {/* <NextProject link="/projects/pivot" /> */}
+      <NextProject link="/projects/pivot" />
     </ScrollEffect>
   );
 }

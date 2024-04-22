@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import React, {
   useState,
   useRef,
@@ -99,7 +100,7 @@ export const ProjectVideo = ({ title, detail }: ProjectProps) => {
   return (
     <div className=" md:w-screen relative whitespace-normal shrink-0 flex pt-[5vh] justify-center items-center ">
       <video
-        className="h-auto w-[90vw] md:h-[80vh] md:w-auto overflow-hidden object-cover border border-[1px] border-brown"
+        className="h-auto w-[90vw] md:h-[80vh] md:w-auto overflow-hidden object-cover border border-[1px]"
         autoPlay
         muted
         loop
@@ -107,6 +108,20 @@ export const ProjectVideo = ({ title, detail }: ProjectProps) => {
         <source src={title} type={detail} />
         Your browser does not support the video tag.
       </video>
+    </div>
+  );
+};
+
+export const ProjectImage = ({ src }: { src: string }) => {
+  return (
+    <div className="md:w-screen relative whitespace-normal shrink-0 flex pt-[5vh] justify-center items-center ">
+      <Image
+        className="h-auto w-[90vw] md:h-[80vh] md:w-auto overflow-hidden object-cover border border-[1px]"
+        src={src}
+        alt="project image"
+        width={1000} // Set a default width
+        height={1000} // Set a default height
+      />
     </div>
   );
 };

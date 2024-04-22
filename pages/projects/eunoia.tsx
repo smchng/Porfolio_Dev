@@ -27,6 +27,7 @@ export default function Eunoia() {
           <div className="mr-[10vw]">
             <ProjectLink
               header="EXT. LINKS"
+              title="visit"
               component="https://eunoiadesign.ca/"
             />
             <ProjectTable header="ROLE" component="Web Developer" />{" "}

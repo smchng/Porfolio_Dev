@@ -31,6 +31,7 @@ Created and designed by a team of 4, this website is adapted from a 3D animation
           <div className="mr-[10vw]">
             <ProjectLink
               header="EXT. LINKS"
+              title="visit"
               component="https://distill-brew.vercel.app/"
             />
             <ProjectTable
@@ -77,7 +78,7 @@ Created and designed by a team of 4, this website is adapted from a 3D animation
           VIP experience.
         </p>
       </div>
-      <NextProject link="/projects/coffee" />
+      <NextProject link="/projects/yvr" />
     </ScrollEffect>
   );
 }

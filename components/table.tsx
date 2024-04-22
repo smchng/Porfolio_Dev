@@ -73,14 +73,14 @@ export const ProjectTable = ({ header, component }: TableProp) => {
     </div>
   );
 };
-export const ProjectLink = ({ header, component }: TableProp) => {
+export const ProjectLink = ({ header, component, title }: TableProp) => {
   const resolvedLink = component !== undefined ? component : "";
   return (
     <div className="pb-[3vh]">
       <p className="text-blue pb-[1vh]">{header}</p>
       <div className="border-b border-white "></div>
       <Link href={resolvedLink} target="_blank">
-        <p className="pt-[1vh] hover:text-blue">visit</p>
+        <p className="pt-[1vh] hover:text-blue">{title}</p>
       </Link>
     </div>
   );

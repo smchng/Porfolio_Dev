@@ -27,6 +27,7 @@ export default function Coffee() {
           <div className="mr-[10vw]">
             <ProjectLink
               header="EXT. LINKS"
+              title="Observable Notebook"
               component="https://observablehq.com/d/ac8f1f9714f7840e"
             />
             <ProjectTable header="ROLE" component="Developer, Data Analyst" />{" "}

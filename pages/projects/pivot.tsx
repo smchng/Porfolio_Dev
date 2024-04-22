@@ -27,6 +27,7 @@ export default function Pivot() {
           <div className="mr-[10vw]">
             <ProjectLink
               header="EXT. LINKS"
+              title="visit"
               component="https://pivot.caseit.org/"
             />
             <ProjectTable header="ROLE" component="Web Developer" />{" "}
