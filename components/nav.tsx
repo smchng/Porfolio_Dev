@@ -1,3 +1,4 @@
+"use client";
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -77,7 +78,6 @@ const MobileNav: React.FC<MobilePageProps> = ({ onClose }) => {
 };
 
 const Nav = () => {
-  const router = useRouter();
   const [isHomePageVisible, setHomePageVisibility] = useState(false);
 
   const handleToggleOverlay = () => {
