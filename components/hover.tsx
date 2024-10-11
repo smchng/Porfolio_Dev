@@ -57,10 +57,10 @@ export class HoverImg extends Component<HoverImgProps, HoverImgState> {
               src={img}
               alt="static"
               className="cursor-pointer"
-              width={100} // Set a default width
-              height={100} // Set a default height
+              width={200} // Set a default width
+              height={200} // Set a default height
               style={{
-                width: "30vw",
+                width: "20vw",
                 height: "auto",
               }}
             />
