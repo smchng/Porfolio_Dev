@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { FadeIn } from "@/components/fadeIn";
 import React, {
   useState,
   useRef,
@@ -84,14 +85,17 @@ export const Project = ({
 
 export const ProjectContent = ({ title, detail, subtext }: ProjectProps) => {
   return (
-    <div className="md:w-screen relative whitespace-normal shrink-0">
-      <h4 className="text-blue py-[15vh]">{title}</h4>
-
-      <h2 className="max-w-[80vw] md:max-w-[50vw] text-[35px] py-[5vh] md:max-w-[70vw] text-base lg:text-[40px] leading-none">
-        {subtext}
-      </h2>
-      <p className="max-w-[80vw] md:max-w-[50vw]">{detail}</p>
-      <p className="text-blue py-[5vh] hidden md:inline">scroll →</p>
+    <div className="md:w-screen h-screen flex flex-col justify-between relative whitespace-normal shrink-0">
+      <h4 className="text-blue pt-[15vh]">{title}</h4>
+      <div className="flex flex-col justify-center flex-grow ">
+        <FadeIn>
+          <h2 className="max-w-[80vw] md:max-w-[50vw] text-[35px] py-[5vh] md:max-w-[70vw] text-base lg:text-[40px] leading-none">
+            {subtext}
+          </h2>
+          <p className="max-w-[80vw] md:max-w-[50vw]">{detail}</p>{" "}
+        </FadeIn>
+        <p className="text-blue py-[5vh] hidden md:inline">scroll →</p>
+      </div>
     </div>
   );
 };
@@ -128,11 +132,13 @@ export const ProjectImage = ({ src }: { src: string }) => {
 
 export const ProjectText = ({ detail, title }: ProjectProps) => {
   return (
-    <div className="h-[50vh] md:h-screen px-[5vw] lg:px-[3vw] sm:w-[100%] md:w-[50vw] lg:w-[40vw] flex flex-col justify-center  relative whitespace-normal shrink-0">
-      <p className="text-[15px]">
-        <strong>{title}</strong>
-      </p>
-      <p>{detail}</p>
+    <div className="h-[50vh] md:h-screen px-[5vw] lg:px-[3vw] sm:w-[100%] md:w-[50vw] lg:w-[50vw] flex flex-col justify-center  relative whitespace-normal shrink-0">
+      <FadeIn>
+        <p className="text-[15px]">
+          <strong>{title}</strong>
+        </p>
+        <p>{detail}</p>
+      </FadeIn>
     </div>
   );
 };
@@ -184,7 +190,7 @@ export const ScrollEffect: React.FC<ScrollContainerProps> = ({ children }) => {
   return (
     <div
       ref={containerRef}
-      className="md:flex md:flex-row  md:overflow-x-scroll scroll-container px-[3vw]"
+      className="md:flex md:flex-row  md:overflow-x-scroll scroll-container px-[3vw] "
       onWheel={handleScroll}
     >
       {children}

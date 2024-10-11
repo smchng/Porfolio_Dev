@@ -7,7 +7,7 @@ import {
 } from "@/components/project";
 import React, { useRef, useState, useEffect } from "react";
 
-import { ProjectTable, ProjectLink } from "@/components/table";
+import { ProjectTable, ProjectLink, CombinedTable } from "@/components/table";
 
 export default function Caseit() {
   return (
@@ -17,25 +17,24 @@ export default function Caseit() {
         subtext="INFORMATION SITE FOR INTERNATIONAL CASE COMPETITION"
         detail="Applied updated event information for international competitor and prospecting visitors. Implemented new pages under DiscoverIT that informed competitors about the city of Vancouver. During the event week, site featured LiveChat services and live updates on occuring case presentations."
       />
-      <div className="md:w-screen relative whitespace-normal shrink-0">
-        {" "}
-        {/* <h4 className="text-blue py-[15vh]">EUNOIA 2024</h4> */}
-        <div className="md:grid md:grid-cols-2 pt-[25vh]">
-          <h2 className="text-[40px] text-base lg:text-lg pb-[5vh]">
-            ABOUT <br /> THE PROJECT
-          </h2>{" "}
-          <div className="mr-[10vw]">
+      <CombinedTable>
+        {[
+          <div key="child1">
+            {" "}
             <ProjectLink
               header="EXT. LINKS"
               title="visit"
               component="https://caseit.org"
             />
             <ProjectTable header="ROLE" component="Web Developer" />{" "}
+          </div>,
+          <div key="child2">
+            {" "}
             <ProjectTable header="TIMELINE" component="5 months" />{" "}
             <ProjectTable header="TOOLS" component="HTML, CSS, JS" />
-          </div>
-        </div>
-      </div>{" "}
+          </div>,
+        ]}
+      </CombinedTable>
       <ProjectText
         title="About the site"
         detail=" The site serves as an engaging introduction to SFU CaseIT’s international case competition. Featuring the international recognization the organization holds, the organizing commitee's legacy, and what's is offered to those who compete."

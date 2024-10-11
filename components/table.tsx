@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { FadeIn } from "@/components/fadeIn";
 
 type TableProp = {
   header?: string;
@@ -6,6 +7,7 @@ type TableProp = {
   date?: string;
   title?: string;
   list?: Array<{ title: string; component: string; date: string }>;
+  children?: React.ReactNode[];
 };
 
 export const SkillTable = ({ header, component }: TableProp) => {
@@ -82,6 +84,17 @@ export const ProjectLink = ({ header, component, title }: TableProp) => {
       <Link href={resolvedLink} target="_blank">
         <p className="pt-[1vh] hover:text-blue">{title}</p>
       </Link>
+    </div>
+  );
+};
+
+export const CombinedTable = ({ children }: TableProp) => {
+  return (
+    <div className="md:w-screen relative whitespace-normal flex flex-col justify-center shrink-0">
+      <div className="md:grid md:grid-cols-2">
+        <FadeIn className="mr-[10vw]">{children && children[0]}</FadeIn>
+        <FadeIn className="mr-[10vw]">{children && children[1]}</FadeIn>
+      </div>
     </div>
   );
 };

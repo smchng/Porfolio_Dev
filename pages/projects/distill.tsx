@@ -7,7 +7,7 @@ import {
 } from "@/components/project";
 import React, { useRef, useState, useEffect } from "react";
 import Link from "next/link";
-import { ProjectTable, ProjectLink } from "@/components/table";
+import { ProjectTable, ProjectLink, CombinedTable } from "@/components/table";
 
 export default function Distill() {
   return (
@@ -21,14 +21,10 @@ Designed and implemented an e-commerce website that showcases quality coffee equ
 
 Created and designed by a team of 4, this website is adapted from a 3D animation video based on the process of siphon coffee. The website is focused on accessible navigation and engaging movement"
       />
-      <div className="md:w-screen relative whitespace-normal shrink-0">
-        {" "}
-        {/* <h4 className="text-blue py-[15vh]">EUNOIA 2024</h4> */}
-        <div className="md:grid md:grid-cols-2 pt-[25vh]">
-          <h2 className="text-[40px] text-base lg:text-lg pb-[5vh]">
-            ABOUT <br /> THE PROJECT
-          </h2>{" "}
-          <div className="mr-[10vw]">
+      <CombinedTable>
+        {[
+          <div key="child1">
+            {" "}
             <ProjectLink
               header="EXT. LINKS"
               title="visit"
@@ -38,11 +34,15 @@ Created and designed by a team of 4, this website is adapted from a 3D animation
               header="ROLE"
               component="Web Developer, Project Manager"
             />{" "}
+          </div>,
+          <div key="child2">
+            {" "}
             <ProjectTable header="TIMELINE" component="3 months" />{" "}
             <ProjectTable header="TOOLS" component="Maya, Next.js, Tailwind" />
-          </div>
-        </div>
-      </div>{" "}
+          </div>,
+        ]}
+      </CombinedTable>
+
       <ProjectVideo title="/video/distill-set.webm" detail="video/webm" />
       <ProjectText detail=" Introduces Distill's carefully crafted siphon soffee set that includes the buner, paddle, filter, and machine. Information about the item is provided for consumers to explore. As well as 3D rendered examples of the items to demonstrate its use and capabilities." />
       <ProjectVideo title="/video/distill-water.webm" detail="video/webm" />

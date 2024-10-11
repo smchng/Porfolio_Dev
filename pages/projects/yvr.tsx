@@ -8,8 +8,7 @@ import {
 } from "@/components/project";
 import React, { useRef, useState, useEffect } from "react";
 
-import { ProjectTable, ProjectLink } from "@/components/table";
-
+import { ProjectTable, ProjectLink, CombinedTable } from "@/components/table";
 export default function Yvr() {
   return (
     <ScrollEffect>
@@ -18,25 +17,25 @@ export default function Yvr() {
         subtext="FLIGHT INFORMATION DISPLAY AT YVR"
         detail="Conducted investigative research into Vancouver International Airport’s protocols in observations desks. Revised and developed a tangible solution through interviewing plane spotters and site visits. The proposed solution bridges the public with YVR and enforces YVR’s objective to serve the community."
       />
-      <div className="md:w-screen relative whitespace-normal shrink-0">
-        {" "}
-        {/* <h4 className="text-blue py-[15vh]">EUNOIA 2024</h4> */}
-        <div className="md:grid md:grid-cols-2 pt-[25vh]">
-          <h2 className="text-[40px] text-base lg:text-lg pb-[5vh]">
-            ABOUT <br /> THE PROJECT
-          </h2>{" "}
-          <div className="mr-[10vw]">
+
+      <CombinedTable>
+        {[
+          <div key="child1">
+            {" "}
             <ProjectLink
               header="EXT. LINKS"
               title="Figma Document"
               component="https://www.figma.com/file/AN0DgzSA0baGpXx5npuq62/SFU-SIAT-X-YVR-PLANE-SPOTTER-PROJECT-(FINAL)?type=design&node-id=1%3A396&mode=design&t=IWqFbrtL2KCgHTic-1"
             />
             <ProjectTable header="ROLE" component="UX Researcher" />{" "}
+          </div>,
+          <div key="child2">
+            {" "}
             <ProjectTable header="TIMELINE" component="4 months" />{" "}
             <ProjectTable header="TOOLS" component="Figma, Maya" />
-          </div>
-        </div>
-      </div>{" "}
+          </div>,
+        ]}
+      </CombinedTable>
       <ProjectText
         title="Problem Space"
         detail="YVR's South Terminal’s platform presents the challenge of underutilised, outdated and insufficient signage. The limited information provided by YVR drives planespotters to outsource information, resulting in tedious handling during planespotting."

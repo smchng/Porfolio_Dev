@@ -7,7 +7,7 @@ import {
 } from "@/components/project";
 import React, { useRef, useState, useEffect } from "react";
 
-import { ProjectTable, ProjectLink } from "@/components/table";
+import { ProjectTable, ProjectLink, CombinedTable } from "@/components/table";
 
 export default function Eunoia() {
   return (
@@ -17,28 +17,27 @@ export default function Eunoia() {
         subtext="EVENT WEBSITE WITH INTERACTIVE STICKERS AND ANIMATION"
         detail="Developed the website for SFU Eunoia’s 2024 design Jam that featured events schedule, sponsors, and legacy. The site includes interactive stickers representing key aspects of the event and featuring sponsors, serving as the central hub for essential information on schedule and activities. The event represents the transformation of an idea to real-life through collaboration and unrestricted exploration."
       />
-      <div className="md:w-screen relative whitespace-normal shrink-0">
-        {" "}
-        {/* <h4 className="text-blue py-[15vh]">EUNOIA 2024</h4> */}
-        <div className="md:grid md:grid-cols-2 pt-[25vh]">
-          <h2 className="text-[40px] text-base lg:text-lg pb-[5vh]">
-            ABOUT <br /> THE PROJECT
-          </h2>{" "}
-          <div className="mr-[10vw]">
+      <CombinedTable>
+        {[
+          <div key="child1">
+            {" "}
             <ProjectLink
               header="EXT. LINKS"
               title="visit"
               component="https://eunoiadesign.ca/"
             />
-            <ProjectTable header="ROLE" component="Web Developer" />{" "}
+            <ProjectTable header="ROLE" component="Web Developer" />
+          </div>,
+          <div key="child2">
+            {" "}
             <ProjectTable header="TIMELINE" component="8 weeks" />{" "}
             <ProjectTable
               header="TOOLS"
               component="React, Next.js, Tailwind, Git, Agile, Scrum"
             />
-          </div>
-        </div>
-      </div>
+          </div>,
+        ]}
+      </CombinedTable>
       <ProjectText
         title="Working with designers"
         detail="Collaborating with designers on Figma, I translate functionalities seamlessly and utilize breakpoints for responsive site design adaptation. This included animations as well as interactions for visitors."
