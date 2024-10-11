@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import React from "react";
 
 type FadeProps = {
   children: React.ReactNode;
@@ -51,5 +52,28 @@ export const FadeIn = ({
     </div>
   );
 };
+export const SlideIn: React.FC<FadeProps> = ({ children }) => {
+  const [animate, setAnimate] = useState(false);
+  const [showSecond, setShowSecond] = useState(false); // State to control second child's visibility
 
-export default FadeIn;
+  useEffect(() => {
+    // Trigger animation after component mounts
+    setAnimate(true);
+    // Set a timeout to show the second child after the first has animated in
+    const timer = setTimeout(() => {
+      setShowSecond(true);
+    }, 300); // Adjust delay to match the duration of your animation
+
+    return () => clearTimeout(timer); // Cleanup timer
+  }, []);
+
+  return (
+    <div className="flex flex-col justify-end m-0">
+      {React.Children.map(children, (child, index) => {
+        const animationClass =
+          index === 0 ? "slide-in-right-1" : "slide-in-right-2"; // Apply staggered animations
+        return <div className={animate ? animationClass : ""}>{child}</div>;
+      })}
+    </div>
+  );
+};

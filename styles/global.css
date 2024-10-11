@@ -80,3 +80,21 @@ img {
   opacity: 1;
   transform: translateY(0);
 }
+@keyframes slideInRight {
+  0% {
+    transform: translateX(50%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.slide-in-right-1 {
+  animation: slideInRight 1s ease forwards; /* For the first heading */
+}
+
+.slide-in-right-2 {
+  animation: slideInRight 2s ease forwards; /* For the second heading with a delay */
+}

@@ -4,7 +4,7 @@ import Image from "next/image";
 import Marquee from "react-fast-marquee";
 import { Project } from "@/components/project";
 import * as project from "@/content/home_content";
-import { FadeIn } from "@/components/fadeIn";
+import { FadeIn, SlideIn } from "@/components/fadeIn";
 
 export default function Home() {
   const [selectedTag, setSelectedTag] = useState("");
@@ -86,13 +86,12 @@ export default function Home() {
   return (
     <div>
       <div className="p-[2vw] h-screen flex flex-col sm:flex-row justify-center md:justify-start text-center md:text-left">
-        <div className="flex flex-col justify-end m-0">
-          {/* Titles */}
+        <SlideIn>
           <h1 className="mb-0 leading-none text-[8vw]">
             {project.HomeText.title1}
           </h1>
           <h1 className="mt-0 text-[8vw]">{project.HomeText.title2}</h1>
-        </div>
+        </SlideIn>
       </div>
       <FadeIn className="m-0 px-[2vw] py-[10vw]">
         <p>{project.HomeText.logline}</p>
