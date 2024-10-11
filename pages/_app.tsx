@@ -15,7 +15,7 @@ import Coffee from "@/pages/projects/coffee";
 import YVR from "@/pages/projects/yvr";
 import Recap from "@/pages/projects/recap";
 import Styleguide from "@/pages/styleguide";
-
+import { CursorProvider, Cursor } from "@/components/cursor";
 import Head from "next/head";
 
 export default function App() {
@@ -43,25 +43,28 @@ export default function App() {
         <link rel="icon" type="image/png" href="/imgs/seal.jpg" />
         {/* Other head elements */}
       </Head>
-      <main className={"bg-navy"}>
-        <section>
-          <Nav />
-        </section>
-        <section className=" px-[1vw]">
-          {currentPage === "/" && <Home />}
-          {currentPage === "/about" && <About />}
-          {currentPage === "/projects/eunoia" && <Eunoia />}
-          {currentPage === "/projects/caseit" && <Caseit />}
-          {currentPage === "/projects/pivot" && <Pivot />}
-          {currentPage === "/projects/coffee" && <Coffee />}
-          {currentPage === "/projects/distill" && <Distill />}
-          {currentPage === "/projects/yvr" && <YVR />}
-          {currentPage === "/projects/recap" && <Recap />}
-          {currentPage === "/styleguide" && <Styleguide />}
-        </section>
-        <section className=" px-[1vw]">
-          <Footer />
-        </section>
+      <main className={"bg-navy cursor-none "}>
+        <CursorProvider>
+          <Cursor />
+          <section>
+            <Nav />
+          </section>
+          <section className=" px-[1vw]">
+            {currentPage === "/" && <Home />}
+            {currentPage === "/about" && <About />}
+            {currentPage === "/projects/eunoia" && <Eunoia />}
+            {currentPage === "/projects/caseit" && <Caseit />}
+            {currentPage === "/projects/pivot" && <Pivot />}
+            {currentPage === "/projects/coffee" && <Coffee />}
+            {currentPage === "/projects/distill" && <Distill />}
+            {currentPage === "/projects/yvr" && <YVR />}
+            {currentPage === "/projects/recap" && <Recap />}
+            {currentPage === "/styleguide" && <Styleguide />}
+          </section>
+          <section className=" px-[1vw]">
+            <Footer />
+          </section>
+        </CursorProvider>
       </main>
     </>
   );

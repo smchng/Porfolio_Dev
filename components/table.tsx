@@ -40,11 +40,8 @@ export const ExpTable = ({ header, list }: TableProp) => {
       {list && (
         <div>
           {list.map((item, index) => (
-            <div
-              key={index}
-              className="md:hover:underline grid grid-cols-2 pb-[2vh]"
-            >
-              <div className="md:grid md:grid-cols-2">
+            <div key={index} className=" grid grid-cols-2 pb-[2vh]">
+              <div className=" md:grid md:grid-cols-2">
                 <p>{item.title}</p>
                 <p>{item.component}</p>{" "}
               </div>

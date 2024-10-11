@@ -15,6 +15,7 @@ module.exports = {
       colors: {
         blue: "#9DB2BF",
         navy: "#232830",
+        navyDark: "#151A22",
       },
       fontSize: {
         "2xs": "12px",
