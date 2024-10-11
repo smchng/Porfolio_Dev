@@ -64,11 +64,11 @@ export default function About() {
         <FadeIn>
           {" "}
           <div className=" flex space-x-[3vw] justify-center w-full">
-            {NavItems.slice(2, 6).map((item, index) => (
+            {NavItems.slice(3, 6).map((item, index) => (
               <Link href={item.link} key={index} target="_blank">
                 <p className="text-white text-[10px] md:text-[11px] ">
                   {item.text}
-                  {index !== NavItems.slice(2, 6).length - 1 && (
+                  {index !== NavItems.slice(3, 6).length - 1 && (
                     <span className="pl-[3vw]">/</span>
                   )}
                 </p>

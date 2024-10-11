@@ -21,7 +21,7 @@ export default function Home() {
   const [projectSize, setProjectSize] = useState("");
   const [filterSize, setFilterSize] = useState("");
 
-  project.ProjectItems.filter(
+  const filteredItems = project.ProjectItems.filter(
     (item) => selectedTag === "all" || item.tag === selectedTag
   );
   const handleFilterClick = (tag: string) => {
@@ -155,7 +155,7 @@ export default function Home() {
               <div
                 className={`overflow-y-auto scroll-container  ${projectSize}`}
               >
-                {project.ProjectItems.map((item, index) => (
+                {filteredItems.map((item, index) => (
                   <Project
                     key={index}
                     title={item.title}
