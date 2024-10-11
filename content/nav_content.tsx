@@ -25,3 +25,10 @@ export const NavItems = [
     text: "EMAIL",
   },
 ];
+export const titleMapping: { [key: string]: string } = {
+  "/": "Home",
+  "/about": "About Us",
+  "/projects": "Projects",
+  "/contact": "Contact Me",
+  // Add more mappings as needed
+};

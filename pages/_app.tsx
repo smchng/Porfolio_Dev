@@ -17,6 +17,7 @@ import Recap from "@/pages/projects/recap";
 import Styleguide from "@/pages/styleguide";
 import { CursorProvider, Cursor } from "@/components/cursor";
 import Head from "next/head";
+import { titleMapping } from "@/content/nav_content";
 
 export default function App() {
   const router = useRouter();
@@ -25,7 +26,8 @@ export default function App() {
     document.title = "Samantha Chung ";
 
     const handleRouteChange = (url: string) => {
-      document.title = "Samantha Chung | " + url;
+      const title = titleMapping[url] || "Default Title"; // Fallback title if no match is found
+      document.title = `Samantha Chung | ${title}`;
     };
 
     router.events.on("routeChangeComplete", handleRouteChange);

@@ -2,16 +2,32 @@ import type { Config } from "tailwindcss";
 
 const config: Config = {
   content: [
+    "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "*/*/**.{html,js,ts,tsx}",
+    "/styles/global.css",
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      fontFamily: {
+        Josefin: ["KaiseiHarunoUmi", "serif"],
+      },
+      colors: {
+        blue: "#9DB2BF",
+        navy: "#232830",
+        navyDark: "#151A22",
+      },
+      fontSize: {
+        "2xs": "12px",
+        xs: "16px",
+        sm: "21px",
+        base: "25px",
+        lg: "50px",
+        xl: "55px",
+      },
+      animation: {
+        "spin-slow": "spin 25s linear infinite",
       },
     },
   },
