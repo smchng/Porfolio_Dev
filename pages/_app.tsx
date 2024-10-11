@@ -60,8 +60,8 @@ export default function App() {
             {currentPage === "/projects/coffee" && <Coffee />}
             {currentPage === "/projects/distill" && <Distill />}
             {currentPage === "/projects/yvr" && <YVR />}
-            {currentPage === "/projects/recap" && <Recap />}
-            {currentPage === "/styleguide" && <Styleguide />}
+            {/* {currentPage === "/projects/recap" && <Recap />} */}
+            {/* {currentPage === "/styleguide" && <Styleguide />} */}
           </section>
           <section className=" px-[1vw]">
             <Footer />

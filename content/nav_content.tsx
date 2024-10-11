@@ -27,8 +27,13 @@ export const NavItems = [
 ];
 export const titleMapping: { [key: string]: string } = {
   "/": "Home",
-  "/about": "About Us",
+  "/about": "About Me",
   "/projects": "Projects",
-  "/contact": "Contact Me",
+  "/projects/eunoia": "Eunoia",
+  "/projects/caseit": " Caseit",
+  "/projects/pivot": "Pivot",
+  "/projects/coffee": "Coffee Analysis",
+  "/projects/distill": "Distill Brew",
+  "/projects/yvr": "YVR Research",
   // Add more mappings as needed
 };
