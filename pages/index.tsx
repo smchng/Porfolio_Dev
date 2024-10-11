@@ -3,90 +3,12 @@ import React, { useState, useContext, useEffect, useLayoutEffect } from "react";
 import Image from "next/image";
 import Marquee from "react-fast-marquee";
 import { Project } from "@/components/project";
-
-import img from "@/public/imgs/stock.png";
-import eunoia from "@/public/imgs/eunoia.jpg";
-import caseit from "@/public/imgs/caseit.png";
-import coffee from "@/public/imgs/coffee.png";
-import distill from "@/public/imgs/distill.png";
-import yvr from "@/public/imgs/yvr.png";
-import pivot from "@/public/imgs/pivot.webp";
+import * as project from "@/content/home_content";
+import { FadeIn } from "@/components/fadeIn";
 
 export default function Home() {
   const [selectedTag, setSelectedTag] = useState("");
   const uniqueTags = Array.from(new Set(["dev", "research"]));
-  const ProjectItems = [
-    {
-      title: "WEB DEVELOPER",
-      group: "EUNOIA DESIGN JAM",
-      link: "eunoiadesign2024.com",
-      skill: "tailwind, next.js",
-      page: "/projects/eunoia",
-      tag: "dev",
-      img: eunoia,
-    },
-    {
-      title: "WEB DEVELOPER",
-      group: "CASEIT",
-      link: "https://www.caseit.org/",
-      skill: "html/css, js",
-      page: "/projects/caseit",
-      tag: "dev",
-      img: caseit,
-    },
-    {
-      title: "UX/UI RESEARCHER",
-      group: "YVR KIOSK",
-      link: "",
-      skill: "figma, user reserch",
-      page: "/projects/yvr",
-      tag: "research",
-      img: yvr,
-    },
-    {
-      title: "WEB DEVELOPER",
-      group: "PIVOT",
-      link: "https://pivot.caseit.org/",
-      skill: "react, html/css",
-      page: "/projects/pivot",
-      tag: "dev",
-      img: pivot,
-    },
-    {
-      title: "WEB DEVELOPER",
-      group: "DISTILL BREW",
-      link: "https://distill-brew.vercel.app/",
-      skill: "next.js, tailwind",
-      page: "/projects/distill",
-      tag: "dev",
-      img: distill,
-    },
-    // {
-    //   title: "DATA ANALYST",
-    //   group: "COFFEE BEAN ANALYSIS",
-    //   link: "https://observablehq.com/d/ac8f1f9714f7840e",
-    //   skill: "sql, js",
-    //   page: "/projects/coffee",
-    //   tag: "research",
-    //   img: coffee,
-    // },
-
-    // {
-    //   title: "DEVELOPER",
-    //   group: "RECAP",
-    //   link: "",
-    //   skill: "python",
-    //   page: "/projects/recap",
-    //   tag: "dev",
-    //   img: eunoia,
-    // },
-  ].filter((item) => selectedTag === "all" || item.tag === selectedTag);
-  const handleFilterClick = (tag: string) => {
-    setSelectedTag(tag);
-  };
-  useEffect(() => {
-    setSelectedTag("all");
-  }, []);
 
   const [windowWidth, setWindowWidth] = useState(
     typeof window !== "undefined" ? window.innerWidth : 0
@@ -98,6 +20,16 @@ export default function Home() {
   const [flexDirection, setFlexDirection] = useState("");
   const [projectSize, setProjectSize] = useState("");
   const [filterSize, setFilterSize] = useState("");
+
+  project.ProjectItems.filter(
+    (item) => selectedTag === "all" || item.tag === selectedTag
+  );
+  const handleFilterClick = (tag: string) => {
+    setSelectedTag(tag);
+  };
+  useEffect(() => {
+    setSelectedTag("all");
+  }, []);
 
   useEffect(() => {
     const handleResize = () => {
@@ -154,77 +86,93 @@ export default function Home() {
   return (
     <div>
       <div className="p-[2vw] h-screen flex flex-col sm:flex-row justify-center md:justify-start text-center md:text-left">
-        <div className="flex flex-col justify-end m-0 ">
-          <h1 className="mb-0 leading-none text-[8vw]">CREATIVE</h1>
-          <h1 className="mt-0 text-[8vw]">DEVELOPER</h1>
+        <div className="flex flex-col justify-end m-0">
+          {/* Titles */}
+          <h1 className="mb-0 leading-none text-[8vw]">
+            {project.HomeText.title1}
+          </h1>
+          <h1 className="mt-0 text-[8vw]">{project.HomeText.title2}</h1>
         </div>
-        <p className="flex flex-col justify-end m-0 pb-[2vw] md:pl-[2vw]">
-          I aim to enhance digital experiences with motion with a focus on
-          accessibility.{" "}
-        </p>{" "}
       </div>
-      <Marquee
-        autoFill
-        className="space-x-3 tracking-widest md:text-lg my-[5vh]"
-      >
-        DIGITAL ARCHIVE
-      </Marquee>
-      <div className={`py-[5vh] grid ${flexDirection}`}>
-        <Image
-          src={hoveredProject !== null ? ProjectItems[hoveredProject].img : img}
-          alt="project title card"
-          style={{
-            height: isSmallViewport ? "40vh" : "80vh",
-            width: "100%",
-            maxWidth: isSmallViewport ? "500px" : "100%",
-          }}
-          className={"max-h-[80vh] 2xl:max-h-[70vh] align-center object-cover "}
-        ></Image>
-        <div>
-          <div
-            className={`${filterSize} md:pb-[1vh] pt-[1vh] flex space-x-2 text-blue cursor-pointer`}
-          >
-            <p
-              onClick={() => handleFilterClick("all")}
-              className=" hover:text-white"
+      <FadeIn className="m-0 px-[2vw] py-[10vw]">
+        <p>{project.HomeText.logline}</p>
+      </FadeIn>
+      <FadeIn>
+        <Marquee
+          autoFill
+          className="space-x-3 tracking-widest md:text-lg my-[5vh]"
+        >
+          {project.HomeText.banner}
+        </Marquee>
+      </FadeIn>
+      <FadeIn>
+        <div className={`py-[5vh] grid ${flexDirection}`}>
+          <Image
+            src={
+              hoveredProject !== null
+                ? project.ProjectItems[hoveredProject].img
+                : "/imgs/stock.png" // Correct relative path with a leading slash
+            }
+            alt="project title card"
+            width={isSmallViewport ? 500 : 1000} // Provide width
+            height={isSmallViewport ? 400 : 800} // Provide height
+            style={{
+              height: isSmallViewport ? "40vh" : "80vh",
+              width: "100%",
+              maxWidth: isSmallViewport ? "500px" : "100%",
+            }}
+            className={
+              "max-h-[80vh] 2xl:max-h-[70vh] align-center object-cover"
+            }
+          />
+          <div>
+            <div
+              className={`${filterSize} md:pb-[1vh] pt-[1vh] flex space-x-2 text-blue cursor-pointer`}
             >
-              view all
-            </p>
-            <p className="inline slash">/</p>
-            {uniqueTags.map((tag, index) => (
-              <React.Fragment key={index}>
-                <a
-                  onClick={() => handleFilterClick(tag)}
-                  className=" hover:text-white"
-                >
-                  {tag}
-                </a>
-                {index !== uniqueTags.length - 1 && (
-                  <p className="inline slash">/</p>
-                )}
-              </React.Fragment>
-            ))}
-          </div>
-          <div className="relative flex flex-col overflow-hidden ">
-            {/* <div className="absolute top-0 bg-gradient-to-t from-transparent to-navy w-full h-[4vw] z-10"></div> */}
-            <div className={`overflow-y-auto scroll-container  ${projectSize}`}>
-              {ProjectItems.map((item, index) => (
-                <Project
-                  key={index}
-                  title={item.title}
-                  group={item.group}
-                  link={item.link}
-                  skill={item.skill}
-                  page={item.page}
-                  onMouseOver={() => handleProjectHover(index)}
-                  hovered={index === hoveredProject}
-                />
+              <p
+                onClick={() => handleFilterClick("all")}
+                className=" hover:text-white"
+              >
+                view all
+              </p>
+              <p className="inline slash">/</p>
+              {uniqueTags.map((tag, index) => (
+                <React.Fragment key={index}>
+                  <a
+                    onClick={() => handleFilterClick(tag)}
+                    className=" hover:text-white"
+                  >
+                    {tag}
+                  </a>
+                  {index !== uniqueTags.length - 1 && (
+                    <p className="inline slash">/</p>
+                  )}
+                </React.Fragment>
               ))}
             </div>
-            {/* <div className="absolute bottom-0 bg-gradient-to-b from-transparent to-navy w-full h-[4vw] z-10"></div> */}
+            <div className="relative flex flex-col overflow-hidden ">
+              {/* <div className="absolute top-0 bg-gradient-to-t from-transparent to-navy w-full h-[4vw] z-10"></div> */}
+              <div
+                className={`overflow-y-auto scroll-container  ${projectSize}`}
+              >
+                {project.ProjectItems.map((item, index) => (
+                  <Project
+                    key={index}
+                    title={item.title}
+                    group={item.group}
+                    link={item.link}
+                    skill={item.skill}
+                    page={item.page}
+                    onMouseOver={() => handleProjectHover(index)}
+                    hovered={index === hoveredProject}
+                  />
+                ))}
+              </div>
+              {/* <div className="absolute bottom-0 bg-gradient-to-b from-transparent to-navy w-full h-[4vw] z-10"></div> */}
+            </div>
           </div>
         </div>
-      </div>
+      </FadeIn>
     </div>
   );
 }
